@@ -8,5 +8,16 @@ int main()
 	cout << "Hello " << "there!\n";
 	cout << "Hello ";
 	cout << "there!" << endl;
-	cout <<
+}
+
+// program 2-8
+
+int bain()
+{
+
+	int apples;
+
+	apples = 20;
+
+	cout << "Today we sold " << apples << "bushels of apples."
 }
