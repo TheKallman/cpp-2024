@@ -47,7 +47,7 @@ int main()
 	cout << "Purchase: \t\t$100.00" << endl;
 	cout << "State Tax: \t\t$" << stateTax3 << endl;
 	cout << "County Tax: \t\t$" << countyTax3 << endl;
-	cout << "Total: \t\t\t$" << total3 << endl << endl;
+	cout << "Total: \t\t\t$" << total3 << endl << endl << endl;
 	
 
 	cout << "-------------------------Restaurant Bill---------------------------" << endl << endl << endl; // Restaurant Bill
@@ -64,5 +64,36 @@ int main()
 	cout << "Meal Cost: \t\t$" << mealCharge << endl;
 	cout << "Total Tax: \t\t$" << taxAmount << endl;
 	cout << "Total Tip: \t\t$" << tipAmount << endl;
-	cout << "Total Bill: \t\t$" << totalBill << endl;
+	cout << "Total Bill: \t\t$" << totalBill << endl << endl << endl;
+
+
+	cout << "-------------------------Annual Pay---------------------------" << endl << endl << endl; // Annual Pay
+
+
+	auto payAmount = 2200.0;
+	auto payPeriods = 26;
+	auto annualPay = payAmount * payPeriods;
+
+	cout << "The employee's annual pay is: $" << annualPay << endl << endl << endl;
+
+
+	cout << "--------------------------------Cyborg Data Type Sizes---------------------------------" << endl << endl << endl; // Cyborg thing
+
+
+	cout << "A char uses " << sizeof(char) << " byte(s) of memory.\n";
+	cout << "An int uses " << sizeof(int) << " byte(s) of memory.\n";
+	cout << "A float uses " << sizeof(float) << " byte(s) of memory.\n";
+	cout << "A double uses " << sizeof(double) << " byte(s) of memory.\n" << endl << endl << endl;
+
+
+	cout << "-------------------------Diamond Pattern---------------------------" << endl << endl << endl; // Diamond Pattern
+
+
+	cout << "   *" << endl;
+	cout << "  ***" << endl;
+	cout << " *****" << endl;
+	cout << "*******" << endl;
+	cout << " *****" << endl;
+	cout << "  ***" << endl;
+	cout << "   *" << endl;
 }
