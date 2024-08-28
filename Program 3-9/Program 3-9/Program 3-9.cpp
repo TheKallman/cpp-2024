@@ -14,5 +14,5 @@ int main()
 
 	perMonth = static_cast<double>(books) / months;
 
-	cout << "You will nede ot read " << perMonth << " books per month."
+	cout << "You will need to read " << perMonth << " books per month." << endl;
 }
