@@ -34,9 +34,9 @@ int main()
 	cout << "\n\n-----------------------------Cookies---------------------------" << endl << endl;
 
 	//make ingredients constants
-	double const sugar = 1.5;
-	double const butter = 1;
-	double const flour = 2.75;
+	double const sugar = 1.5 / 48.0;
+	double const butter = 1.0 / 48.0;
+	double const flour = 2.75 / 48.0;
 
 	//make input ingredients
 	double inSugar, inButter, inFlour;
@@ -48,6 +48,5 @@ int main()
 
 	//calculate the amount of ingredients needed for the amount of cookies wanted
 
-	double ingredientMult = cookieAmount % 48;
-	cout << ingredientMult;
+	cout << sugar << butter << flour;
 }
