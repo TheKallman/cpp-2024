@@ -1,11 +1,13 @@
 #include <iostream>
 #include <string>
+#include <cmath>
+#include <cstdlib>
 using namespace std;
 int main()
 {
 	cout << "-----------------------------Rainfall---------------------------" << endl << endl;
-	
-	//initialize variables
+
+	/*//initialize variables
 	string month1, month2, month3;
 	float rainfall1, rainfall2, rainfall3, avgRain;
 
@@ -27,13 +29,13 @@ int main()
 
 	//calculate and output average rainfall
 	avgRain = (rainfall1 + rainfall2 + rainfall3) / 3;
-	
+
 	cout << "The average rainfall for the months of " << month1 << ", " << month2
-		<< ", and " << month3 << " is: " << avgRain << " inches of rain.";
+		<< ", and " << month3 << " is: " << avgRain << " inches of rain.";*/
 
 	cout << "\n\n-----------------------------Cookies---------------------------" << endl << endl;
 
-	//make ingredients constants
+	/*//make ingredients constants
 	double const sugar = 1.5 / 48.0;
 	double const butter = 1.0 / 48.0;
 	double const flour = 2.75 / 48.0;
@@ -47,6 +49,16 @@ int main()
 	cin >> cookieAmount;
 
 	//calculate the amount of ingredients needed for the amount of cookies wanted
+	float sugarFormula = sugar * cookieAmount;
+	float butterFormula = butter * cookieAmount;
+	float flourFormula = flour * cookieAmount;
 
-	cout << sugar << butter << flour;
+	cout << "To make " << cookieAmount << " cookies, you will need:\n" <<
+		sugarFormula << " cups of sugar\n" <<
+		butterFormula << " cups of butter\n" <<
+		flourFormula << " cups of flour\n";*/
+
+	cout << "\n\n-----------------------------Math Tutor---------------------------" << endl << endl;
+
+
 }
