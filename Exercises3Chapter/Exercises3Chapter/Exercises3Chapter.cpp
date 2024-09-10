@@ -60,5 +60,38 @@ int main()
 
 	cout << "\n\n-----------------------------Math Tutor---------------------------" << endl << endl;
 
+	/*//set min and max range
+	int const maxValue = 500;
+	int const minValue = 0;
+
+	//make it actually random
+	unsigned seed = time(0);
+	srand(seed);
+
+	//make 2 numbers to add together
+	int num1, num2;
+
+	num1 = (rand() % (maxValue - minValue + 1)) + minValue;
+	num2 = (rand() % (maxValue - minValue + 1)) + minValue;
+
+	cout << "  " << num1 << endl;
+	cout << "+ " << num2 << endl;
+	cout << "-------" << endl << endl;
+
+	//pause so user can math
+	cout << "Press Enter to reveal the answer cuh";
+	cin.get();
+	cout << endl << endl;
+
+	//add the numbers
+	int answer = num1 + num2;
+
+	cout << "  " << num1 << endl;
+	cout << "+ " << num2 << endl;
+	cout << "-------" << endl;
+	cout << "  " << answer;*/
+
+	cout << "\n\n-----------------------------Monthly Payments---------------------------" << endl << endl;
+
 
 }
