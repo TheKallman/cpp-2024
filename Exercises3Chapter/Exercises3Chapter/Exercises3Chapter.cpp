@@ -2,6 +2,7 @@
 #include <string>
 #include <cmath>
 #include <cstdlib>
+#include <iomanip>
 using namespace std;
 int main()
 {
@@ -93,5 +94,70 @@ int main()
 
 	cout << "\n\n-----------------------------Monthly Payments---------------------------" << endl << endl;
 
+	cout << "\n\n-----------------------------Pizza Pi---------------------------" << endl << endl;
 
+	//initialzer the things 
+	double diameter;
+	int people;
+	int sliceAmount;
+	double const sliceSize = 14.125;
+	double const pi = 3.141592653;
+
+	//get diameter
+	cout << "Enter the diameter of the pizza in inches: ";
+	cin >> diameter;
+
+	//calculate area of pizza and amount of slices
+	double pizzaArea = pi * pow((diameter / 2), 2);
+	double sliceCounter = pizzaArea / sliceSize;
+
+	//display slice amount
+	cout << fixed << "A " << setprecision(1) << diameter << " inch piza contains about " << sliceCounter << " slices.\n\n";
+	
+	//ask for amount of people attending
+	cout << "How many people will be attending? ";
+	cin >> people;
+
+	//ask for slices per person
+	cout << "\nHow many slices per person? ";
+	cin >> sliceAmount;
+
+	//calculate amount of pizzas needed
+	double pizzaAmount = (people * sliceAmount) / sliceCounter;
+
+	//print that john
+	cout << "You will need to buy " << pizzaAmount << " total pizzas.";
+
+	cout << "\n\n-----------------------------Word Game---------------------------" << endl << endl;
+
+	/*//initialize player input things
+	string name, age, city, college, profession, animal, pet_name;
+
+	//ask for things
+	cout << "Please insert a name of a person: ";
+	getline(cin, name);
+
+	cout << "Please insert an age: ";
+	getline(cin, age);
+
+	cout << "Please insert a city: ";
+	getline(cin, city);
+
+	cout << "Please insert a college: ";
+	getline(cin, college);
+
+	cout << "Please insert a profession: ";
+	getline(cin, profession);
+
+	cout << "Please insert an animal: ";
+	getline(cin, animal);
+
+	cout << "Please insert a pet name: ";
+	getline(cin, pet_name);
+
+	//output the story
+
+	cout << "There once was a person named " << name << " who lived in " << city << ". At the age of " << age << " " << name << " went to college at " <<
+		college << ". " << name << " graduated and went to work as a " << profession << ". Then, " << name << " adopted a(n) " << animal << " named " <<
+		pet_name << ". They both lived happily ever after.";*/
 }
