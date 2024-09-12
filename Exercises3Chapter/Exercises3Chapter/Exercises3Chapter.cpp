@@ -94,9 +94,41 @@ int main()
 
 	cout << "\n\n-----------------------------Monthly Payments---------------------------" << endl << endl;
 
+	//initialize the necessary items
+	float loan, annualRate;
+	int paymentNumber;
+	
+	//get all the necessary items
+	cout << "Enter the loan amount: ";
+	cin >> loan;
+
+	cout << "Enter the annual interest rate: ";
+	cin >> annualRate;
+
+	cout << "Enter the number of payments made: ";
+	cin >> paymentNumber;
+
+	//calculations
+	float MIR = annualRate / 12; //"Rate" in formula
+	float adjustedRate = pow((1 + MIR), paymentNumber);
+	float monthlyPayment = (MIR * adjustedRate) / (adjustedRate - 1) * loan;
+	float totalPaid = MIR * paymentNumber;
+	float interestPaid = totalPaid - loan;
+	float amountPaidBack = loan + interestPaid;
+	float payment = ((MIR + pow((1 + MIR), paymentNumber)) / (pow((1 + MIR), paymentNumber) - 1)) * loan;
+
+	//output everything
+	cout << "Loan Amount: " << setw(15) << "$ " << loan << endl;
+	cout << "Monthly Interest Rate: " << setw(15) << MIR << "%" << endl;
+	cout << "Number of Payments: " << setw(15) << paymentNumber << endl;
+	cout << "Monthly Payment: " << setw(15) << "$ " << monthlyPayment << endl;
+	cout << "Amount Paid Back: " << setw(15) << "$ " << amountPaidBack << endl;
+	cout << "Interest Paid: " << setw(15) << "$ " << interestPaid << endl;
+
+
 	cout << "\n\n-----------------------------Pizza Pi---------------------------" << endl << endl;
 
-	//initialzer the things 
+	/*//initialzer the things 
 	double diameter;
 	int people;
 	int sliceAmount;
@@ -126,7 +158,7 @@ int main()
 	double pizzaAmount = (people * sliceAmount) / sliceCounter;
 
 	//print that john
-	cout << "You will need to buy " << pizzaAmount << " total pizzas.";
+	cout << "You will need to buy " << pizzaAmount << " total pizzas.";*/
 
 	cout << "\n\n-----------------------------Word Game---------------------------" << endl << endl;
 
