@@ -8,7 +8,7 @@ int main()
 {
 	cout << "-----------------------------Rainfall---------------------------" << endl << endl;
 
-	/*//initialize variables
+	//initialize variables
 	string month1, month2, month3;
 	float rainfall1, rainfall2, rainfall3, avgRain;
 
@@ -32,11 +32,11 @@ int main()
 	avgRain = (rainfall1 + rainfall2 + rainfall3) / 3;
 
 	cout << "The average rainfall for the months of " << month1 << ", " << month2
-		<< ", and " << month3 << " is: " << avgRain << " inches of rain.";*/
+		<< ", and " << month3 << " is: " << avgRain << " inches of rain.";
 
 	cout << "\n\n-----------------------------Cookies---------------------------" << endl << endl;
 
-	/*//make ingredients constants
+	//make ingredients constants
 	double const sugar = 1.5 / 48.0;
 	double const butter = 1.0 / 48.0;
 	double const flour = 2.75 / 48.0;
@@ -57,11 +57,11 @@ int main()
 	cout << "To make " << cookieAmount << " cookies, you will need:\n" <<
 		sugarFormula << " cups of sugar\n" <<
 		butterFormula << " cups of butter\n" <<
-		flourFormula << " cups of flour\n";*/
+		flourFormula << " cups of flour\n";
 
 	cout << "\n\n-----------------------------Math Tutor---------------------------" << endl << endl;
 
-	/*//set min and max range
+	//set min and max range
 	int const maxValue = 500;
 	int const minValue = 0;
 
@@ -90,7 +90,7 @@ int main()
 	cout << "  " << num1 << endl;
 	cout << "+ " << num2 << endl;
 	cout << "-------" << endl;
-	cout << "  " << answer;*/
+	cout << "  " << answer;
 
 	cout << "\n\n-----------------------------Monthly Payments---------------------------" << endl << endl;
 
@@ -109,17 +109,18 @@ int main()
 	cin >> paymentNumber;
 
 	//calculations
+	annualRate /= 100;
 	float MIR = annualRate / 12; //"Rate" in formula
 	float adjustedRate = pow((1 + MIR), paymentNumber);
 	float monthlyPayment = (MIR * adjustedRate) / (adjustedRate - 1) * loan;
-	float totalPaid = MIR * paymentNumber;
+	float totalPaid = monthlyPayment * paymentNumber;
 	float interestPaid = totalPaid - loan;
 	float amountPaidBack = loan + interestPaid;
 	float payment = ((MIR + pow((1 + MIR), paymentNumber)) / (pow((1 + MIR), paymentNumber) - 1)) * loan;
 
 	//output everything
 	cout << "Loan Amount: " << setw(15) << "$ " << loan << endl;
-	cout << "Monthly Interest Rate: " << setw(15) << MIR << "%" << endl;
+	cout << "Monthly Interest Rate: " << setw(15) << MIR*100 << "%" << endl;
 	cout << "Number of Payments: " << setw(15) << paymentNumber << endl;
 	cout << "Monthly Payment: " << setw(15) << "$ " << monthlyPayment << endl;
 	cout << "Amount Paid Back: " << setw(15) << "$ " << amountPaidBack << endl;
@@ -128,7 +129,7 @@ int main()
 
 	cout << "\n\n-----------------------------Pizza Pi---------------------------" << endl << endl;
 
-	/*//initialzer the things 
+	//initialzer the things 
 	double diameter;
 	int people;
 	int sliceAmount;
@@ -158,14 +159,15 @@ int main()
 	double pizzaAmount = (people * sliceAmount) / sliceCounter;
 
 	//print that john
-	cout << "You will need to buy " << pizzaAmount << " total pizzas.";*/
+	cout << "You will need to buy " << pizzaAmount << " total pizzas.";
 
 	cout << "\n\n-----------------------------Word Game---------------------------" << endl << endl;
 
-	/*//initialize player input things
+	//initialize player input things
 	string name, age, city, college, profession, animal, pet_name;
 
 	//ask for things
+	cin.ignore()
 	cout << "Please insert a name of a person: ";
 	getline(cin, name);
 
@@ -191,5 +193,5 @@ int main()
 
 	cout << "There once was a person named " << name << " who lived in " << city << ". At the age of " << age << " " << name << " went to college at " <<
 		college << ". " << name << " graduated and went to work as a " << profession << ". Then, " << name << " adopted a(n) " << animal << " named " <<
-		pet_name << ". They both lived happily ever after.";*/
+		pet_name << ". They both lived happily ever after.";
 }
