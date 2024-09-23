@@ -167,7 +167,7 @@ int main()
 	string name, age, city, college, profession, animal, pet_name;
 
 	//ask for things
-	cin.ignore()
+	cin.ignore();
 	cout << "Please insert a name of a person: ";
 	getline(cin, name);
 
