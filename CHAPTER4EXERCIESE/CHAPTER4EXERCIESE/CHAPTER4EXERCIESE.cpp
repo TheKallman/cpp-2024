@@ -24,7 +24,7 @@ int main()
 	switch (choice)
 	{
 	case 1: // math tutor
-
+	{
 		//set min and max range
 		int const maxValue = 500;
 		int const minValue = 0;
@@ -52,7 +52,7 @@ int main()
 		{
 			cout << "Genius!";
 		}
-		
+
 		else
 		{
 			cout << "That's wrong. Here is the correct answer.";
@@ -63,12 +63,13 @@ int main()
 		}
 
 		break;
-
+	}
 	case 2: // personal best
-		cout << "a";
+	{
+		
 
 		break;
-
+	}
 	case 3: // gemoetry calcuators
 		cout << "b";
 
