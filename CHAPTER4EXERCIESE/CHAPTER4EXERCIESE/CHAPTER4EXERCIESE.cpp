@@ -66,7 +66,30 @@ int main()
 	}
 	case 2: // personal best
 	{
-		
+		string jumperName, month1, month2, month3;
+		float jump1, jump2, jump3;
+
+		//ask for the month and amount of rain in that month
+		cout << "Enter the pole vaulter's name: ";
+		cin >> jumperName;
+		cout << "Enter the date of the first pole vault: ";
+		cin >> month1;
+		cout << "Enter the height of the first pole vault: ";
+		cin >> jump1;
+
+		cout << "Enter the date of the second pole vault: ";
+		cin >> month2;
+		cout << "Enter the height of the second pole vault: ";
+		cin >> jump2;
+
+		cout << "Enter the date of the third pole vault: ";
+		cin >> month3;
+		cout << "Enter the height of the third pole vault: ";
+		cin >> jump3;
+
+		//output the best jumps 1st through 3rd
+		cout << name << "'s personal best:\n";
+		cout << "The best vault took place on Oct 12 with a height of " << 
 
 		break;
 	}
