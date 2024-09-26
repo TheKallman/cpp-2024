@@ -66,32 +66,112 @@ int main()
 	}
 	case 2: // personal best
 	{
-		string jumperName, month1, month2, month3;
+		string jumperName, date1, date2, date3;
 		float jump1, jump2, jump3;
 
 		//ask for the month and amount of rain in that month
 		cout << "Enter the pole vaulter's name: ";
 		cin >> jumperName;
+		cin.ignore();
 		cout << "Enter the date of the first pole vault: ";
-		cin >> month1;
+		getline(cin, date1);
 		cout << "Enter the height of the first pole vault: ";
 		cin >> jump1;
+		cin.ignore();
 
 		cout << "Enter the date of the second pole vault: ";
-		cin >> month2;
+		getline(cin, date2);
 		cout << "Enter the height of the second pole vault: ";
 		cin >> jump2;
+		cin.ignore();
 
 		cout << "Enter the date of the third pole vault: ";
-		cin >> month3;
+		getline(cin, date3);
 		cout << "Enter the height of the third pole vault: ";
 		cin >> jump3;
+		cin.ignore();
 
-		//output the best jumps 1st through 3rd
-		cout << name << "'s personal best:\n";
-		cout << "The best vault took place on Oct 12 with a height of " << 
+		//find top jumps
 
-		break;
+		if ((jump1 >= jump2) && (jump1 >= jump3))
+		{
+			if (jump2 >= jump3)
+			{
+
+			}
+			else
+			{
+
+			}
+		}
+		/*if ((jump1 >= jump2) && (jump1 >= jump3) && (jump2 >= jump3))
+		{
+
+			cout << jumperName << "'s personal best:\n";
+			cout << "The best vault took place on " << date1 <<
+				" with a height of " << jump1 << ".\n";
+			cout << "The 2nd best vault took place on " << date2 <<
+				" with a height of " << jump2 << ".\n";
+			cout << "The 3rd best vault took place on " << date3 <<
+				" with a height of " << jump3 << ".\n";
+		}
+		else if ((jump1 >= jump3) && (jump1 >= jump2) && (jump3 >= jump2))
+		{
+
+			cout << jumperName << "'s personal best:\n";
+			cout << "The best vault took place on " << date1 <<
+				" with a height of " << jump1 << ".\n";
+			cout << "The 2nd best vault took place on " << date3 <<
+				" with a height of " << jump3 << ".\n";
+			cout << "The 3rd best vault took place on " << date3 <<
+				" with a height of " << jump2 << ".\n";
+		}
+		else if ((jump2 >= jump1) && (jump2 >= jump3) && (jump1 >= jump3))
+		{
+
+			cout << jumperName << "'s personal best:\n";
+			cout << "The best vault took place on " << date2 <<
+				" with a height of " << jump2 << ".\n";
+			cout << "The 2nd best vault took place on " << date1 <<
+				" with a height of " << jump1 << ".\n";
+			cout << "The 3rd best vault took place on " << date3 <<
+				" with a height of " << jump3 << ".\n";
+		}
+		else if ((jump2 >= jump3) && (jump2 >= jump1) && (jump3 >= jump1))
+		{
+
+			cout << jumperName << "'s personal best:\n";
+			cout << "The best vault took place on " << date2 <<
+				" with a height of " << jump2 << ".\n";
+			cout << "The 2nd best vault took place on " << date3 <<
+				" with a height of " << jump3 << ".\n";
+			cout << "The 3rd best vault took place on " << date1 <<
+				" with a height of " << jump1 << ".\n";
+		}
+		else if ((jump3 >= jump1) && (jump3 >= jump2) && (jump1 >= jump2))
+		{
+
+			cout << jumperName << "'s personal best:\n";
+			cout << "The best vault took place on " << date3 <<
+				" with a height of " << jump3 << ".\n";
+			cout << "The 2nd best vault took place on " << date1 <<
+				" with a height of " << jump1 << ".\n";
+			cout << "The 3rd best vault took place on " << date2 <<
+				" with a height of " << jump2 << ".\n";
+		}
+		else ((jump3 >= jump2) && (jump3 >= jump1) && (jump2 >= jump1));
+		{
+
+			cout << jumperName << "'s personal best:\n";
+			cout << "The best vault took place on " << date3 <<
+				" with a height of " << jump3 << ".\n";
+			cout << "The 2nd best vault took place on " << date2 <<
+				" with a height of " << jump2 << ".\n";
+			cout << "The 3rd best vault took place on " << date1 <<
+				" with a height of " << jump1 << ".\n";
+		}
+
+		break;*/
 	}
 	case 3: // gemoetry calcuators
 		cout << "b";
