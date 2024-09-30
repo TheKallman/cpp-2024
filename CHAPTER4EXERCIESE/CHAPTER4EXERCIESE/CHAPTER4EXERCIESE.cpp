@@ -55,7 +55,7 @@ int main()
 
 		else
 		{
-			cout << "That's wrong. Here is the correct answer.";
+			cout << "\nThat's wrong. Here is the correct answer.\n";
 			cout << "  " << num1 << endl;
 			cout << "+ " << num2 << endl;
 			cout << "-------" << endl;
@@ -285,6 +285,7 @@ int main()
 		else
 		{
 			cout << "Netflix and chill";
+			break;
 		}
 
 		if (fix2 == "NO" || fix2 == "no")
@@ -297,6 +298,7 @@ int main()
 		else
 		{
 			cout << "Netflix and chill";
+			break;
 		}
 
 		if (fix3 == "NO" || fix3 == "no")
@@ -309,6 +311,7 @@ int main()
 		else
 		{
 			cout << "Netflix and chill";
+			break;
 		}
 
 		if (fix4 == "NO" || fix4 == "no")
@@ -325,14 +328,39 @@ int main()
 
 	case 5: //restauratn
 	{
-		cout << "d";
+		string vegetarian, vegan, gluten;
+
+		cout << "Is anyone vegetarian? (y/n) ";
+		cin >> vegetarian;
+		cout << "Is anyone vegan? (y/n) ";
+		cin >> vegan;
+		cout << "Is anyone gluten-free? (y/n) ";
+		cin >> gluten;
+
+		cout << "Here are your options\n";
+		if ((vegetarian == "n" || vegetarian == "N") && (vegan == "n" || vegan == "N") && (gluten == "n" || gluten == "N"))
+		{
+			cout << "\tJoe's Gourmet Burgers" << endl;
+		}
+
+		if (vegan == "n" || vegan == "N")
+		{
+			cout << "\tMain Street Pizza Company" << endl;
+		}
+		
+		if ((vegan == "n" || vegan == "N") && (gluten == "n" || gluten == "N"))
+		{
+			cout << "\tMama's Street Pizza Company" << endl;
+		}
+
+		cout << "\tCorner Cage" << endl << "\tThe Chef's Kitchen" << endl;
 
 		break;
 	}
 
 	case 6: //quit that john
 	{
-		cout << "e";
+		cout << "BYE BYE BYE BYE BYE BYE BYE BYE BYE BYE BYE BYE111!!121312312!!!";
 		break;
 	}
 	default:
