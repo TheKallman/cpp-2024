@@ -36,6 +36,7 @@ int main()
             //defnie varialbes
             int randomNum;
             int guess;
+            int guessCounter = 0;
 
             //make "random"
             unsigned seed = time(0);
@@ -47,19 +48,20 @@ int main()
             //make stuff to get user to guess
             cout << "A number between 1 and 1000 has been chosen.\n"
                 << "Guess it and I will tell you if your guess is "
-                << "too high or too low\n\n";
+                << "too high or too low\n";
 
             
             do
             {
-                cout << "\nGuess: ";
+                cout << "\n\nGuess: ";
                 cin >> guess;
+                guessCounter++;
 
                 if (guess > randomNum)
                 {
                     cout << "\nToo high, try again.";
                 }
-                else
+                else if (guess < randomNum)
                 {
                     cout << "\nToo low, try again.";
                 }
@@ -67,23 +69,45 @@ int main()
        
 
             cout << "\nYou have guessed the number: " << randomNum;
-            
-
-
-
-
-
-
-
-
-
-
-
+            cout << "\nYou guessed the number in " << guessCounter << " attempts." << endl;
             break;
         }
         case 2:
         {
-            cout << "B";
+            int text = 0, textCounter = 0, sum = 0, high = 0, low = 9786556789987654;
+            double avg = 0;
+
+            ifstream inFile("C:\\Users\\2012325\\Desktop\\cpp-2024\\datafiles\\Random.txt");
+
+            //verify file xists
+            if (!inFile)
+                cout << "File not found";
+            else
+            {
+
+                //read everything
+                while (inFile >> text)
+                {
+                    textCounter++;
+                    sum += text;
+                    avg = sum / textCounter;
+
+                    if (text > high)
+                    {
+                        high = text;
+                    }
+
+                    else if (text < low)
+                    {
+                        low = text;
+                    }
+                }
+                cout << "\n1The number of numbers in the file is: " << textCounter << endl;
+                cout << "The sum of all numbers in the file is: " << sum << endl;
+                cout << "The average of all the numbers in the file is: " << avg << endl;
+                cout << "The highest number in the file is: " << high << endl;
+                cout << "The lowest number in the file is: " << low << endl;
+            }
             break;
         }
         case 3:
