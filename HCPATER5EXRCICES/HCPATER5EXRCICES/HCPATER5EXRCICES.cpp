@@ -102,7 +102,7 @@ int main()
                         low = text;
                     }
                 }
-                cout << "\n1The number of numbers in the file is: " << textCounter << endl;
+                cout << "\nThe number of numbers in the file is: " << textCounter << endl;
                 cout << "The sum of all numbers in the file is: " << sum << endl;
                 cout << "The average of all the numbers in the file is: " << avg << endl;
                 cout << "The highest number in the file is: " << high << endl;
@@ -112,7 +112,18 @@ int main()
         }
         case 3:
         {
-            cout << "C";
+            for (int count = 1; count <= 10; count++)
+            {
+                cout << string(count, '*') << endl;
+
+            }
+
+            for (int count = 10; count >= 1; count--)
+            {
+                cout << string(count, '*') << endl;
+
+            }
+
             break;
         }
         case 4:
