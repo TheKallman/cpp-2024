@@ -128,7 +128,34 @@ int main()
         }
         case 4:
         {
-            cout << "D";
+            ofstream outFile;
+            string name, description, fileName;
+
+            cin.clear();
+            cin.ignore(INT_MAX, '\n');
+
+            cout << "\nEnter your name: ";
+            getline(cin, name);
+            cout << "\nEnter a description about yourself: ";
+            getline(cin, description);
+            cout << "\nEnter file name: ";
+            cin >> fileName;
+
+            outFile.open("C:\\Users\\2012325\\Desktop\\cpp-2024\\datafiles\\" + fileName + ".html");
+
+            if (!outFile)
+                cout << "File not found.";
+            else
+            {
+                outFile << "<html>\n<head>\n</head>\n<body>\n\t<center>\n\t\t<h1>"
+                    << name << "</h1>\n\t</center>\n\t<hr />"
+                    << description << "\n\t<ht />\n</body>\n</html>";
+
+                cout << "\nFile Successfully created.";  
+            }
+
+            outFile.close();
+
             break;
         } 
         case 5:
