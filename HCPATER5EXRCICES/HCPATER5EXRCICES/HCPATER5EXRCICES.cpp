@@ -160,7 +160,42 @@ int main()
         } 
         case 5:
         {
-            cout << "E";
+            //open file
+            ifstream inFile("C:\\Users\\2012325\\Desktop\\cpp-2024\\datafiles\\steps.txt";
+
+            //init variables
+            int janDays = 31, febDays = 28, marDays = 31, aprDays = 30;
+            int mayDays = 31, junDays = 30, julDays = 31, augDays = 31;
+            int sepDays = 30, octDays = 31, novDays = 30, decDays = 31;
+
+            int janSum = 0, febSum = 0, marSum = 0, aprSum = 0;
+            int maySum = 0, junSum = 0, julSum = 0, augSum = 0;
+            int sepSum = 0, octSum = 0, novSum = 0, decSum = 0;
+
+            int janAvg, febAvg, marAvg, aprAvg, mayAvg, junAvg, julAvg;
+            int augAvg, sepAvg, octAvg, novAvg, decAvg;
+
+            int counter = 0;
+
+            int number;
+
+            //verify file
+            if (!inFile)
+                cout << "File not found.";
+            else
+            {
+                while (inFile >> number)
+                {
+                    counter++;
+
+                    while (counter <= 31)
+                        janSum += number;
+
+                    while (counter > 31 && counter <= 59)
+                        febSum += number;
+
+                }
+            }
             break;
         }
         case 6:
