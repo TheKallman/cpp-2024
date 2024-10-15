@@ -10,7 +10,7 @@ using namespace std;
 int main()
 {
     int choice = 0;
-    while (choice != 5)
+    while (choice != 6)
     {
         do
         {
@@ -161,7 +161,7 @@ int main()
         case 5:
         {
             //open file
-            ifstream inFile("C:\\Users\\2012325\\Desktop\\cpp-2024\\datafiles\\steps.txt";
+            ifstream inFile("C:\\Users\\2012325\\Desktop\\cpp-2024\\datafiles\\steps.txt");
 
             //init variables
             int janDays = 31, febDays = 28, marDays = 31, aprDays = 30;
@@ -181,22 +181,93 @@ int main()
 
             //verify file
             if (!inFile)
-                cout << "File not found.";
+                cout << "File not found.\n";
             else
             {
                 while (inFile >> number)
                 {
                     counter++;
+                    // inside loop, read the file and total the steps
+                    // outside the loop, output the total
 
-                    while (counter <= 31)
+                    for (int count = 1; count <= janDays; count++)
+                    {
                         janSum += number;
 
-                    while (counter > 31 && counter <= 59)
+                    }
+                        
+
+                    for (int count = 1; count <= febDays; count++)
+                    {
                         febSum += number;
 
+                    }
+
+                    for (int count = 1; count <= marDays; count++)
+                        marSum += number;
+
+                    for (int count = 1; count <= aprDays; count++)
+                        aprSum += number;
+
+                    for (int count = 1; count <= mayDays; count++)
+                        maySum += number;
+
+                    for (int count = 1; count <= junDays; count++)
+                        junSum += number;
+
+                    for (int count = 1; count <= julDays; count++)
+                        julSum += number;
+
+                    for (int count = 1; count <= augDays; count++)
+                        augSum += number;
+
+                    for (int count = 1; count <= sepDays; count++)
+                        sepSum += number;
+
+                    for (int count = 1; count <= octDays; count++)
+                        octSum += number;
+
+                    for (int count = 1; count <= novDays; count++)
+                        novSum += number;
+
+                    for (int count = 1; count <= decDays; count++)
+                        decSum += number;
+
                 }
+
+                //calculate averages
+                janAvg = janSum / janDays;
+                febAvg = febSum / febDays;
+                marAvg = marSum / marDays;
+                aprAvg = aprSum / aprDays;
+                mayAvg = maySum / mayDays;
+                junAvg = junSum / junDays;
+                julAvg = julSum / julDays;
+                augAvg = augSum / augDays;
+                sepAvg = sepSum / sepDays;
+                octAvg = octSum / octDays;
+                novAvg = novSum / novDays;
+                decAvg = decSum / decDays;
+
+                //output averages
+
+                cout << "\nThe average steps each day for January are: " << janAvg;
+                cout << "\nThe average steps each day for February are: " << febAvg;
+                cout << "\nThe average steps each day for March are: " << marAvg;
+                cout << "\nThe average steps each day for April are: " << aprAvg;
+                cout << "\nThe average steps each day for May are: " << mayAvg;
+                cout << "\nThe average steps each day for June are: " << junAvg;
+                cout << "\nThe average steps each day for July are: " << julAvg;
+                cout << "\nThe average steps each day for August are: " << augAvg;
+                cout << "\nThe average steps each day for September are: " << sepAvg;
+                cout << "\nThe average steps each day for October are: " << octAvg;
+                cout << "\nThe average steps each day for November are: " << novAvg;
+                cout << "\nThe average steps each day for December are: " << decAvg;
+                break;
+
             }
-            break;
+
+            
         }
         case 6:
         {
