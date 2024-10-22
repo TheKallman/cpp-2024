@@ -177,63 +177,94 @@ int main()
 
             int counter = 0;
 
-            int number;
+            int number = 0;
 
             //verify file
             if (!inFile)
                 cout << "File not found.\n";
             else
             {
-                while (inFile >> number)
+               
+                
+                counter++;
+                // inside loop, read the file and total the steps
+                // outside the loop, output the total
+
+                for (int count = 1; count <= janDays; count++)
                 {
-                    counter++;
-                    // inside loop, read the file and total the steps
-                    // outside the loop, output the total
-
-                    for (int count = 1; count <= janDays; count++)
-                    {
-                        janSum += number;
-
-                    }
+                    janSum += number;
+                    inFile >> number;
+                }
                         
 
-                    for (int count = 1; count <= febDays; count++)
-                    {
-                        febSum += number;
-
-                    }
-
-                    for (int count = 1; count <= marDays; count++)
-                        marSum += number;
-
-                    for (int count = 1; count <= aprDays; count++)
-                        aprSum += number;
-
-                    for (int count = 1; count <= mayDays; count++)
-                        maySum += number;
-
-                    for (int count = 1; count <= junDays; count++)
-                        junSum += number;
-
-                    for (int count = 1; count <= julDays; count++)
-                        julSum += number;
-
-                    for (int count = 1; count <= augDays; count++)
-                        augSum += number;
-
-                    for (int count = 1; count <= sepDays; count++)
-                        sepSum += number;
-
-                    for (int count = 1; count <= octDays; count++)
-                        octSum += number;
-
-                    for (int count = 1; count <= novDays; count++)
-                        novSum += number;
-
-                    for (int count = 1; count <= decDays; count++)
-                        decSum += number;
-
+                for (int count = 1; count <= febDays; count++)
+                {
+                    febSum += number;
+                    inFile >> number;
                 }
+
+                for (int count = 1; count <= marDays; count++)
+                {
+                    marSum += number;
+                    inFile >> number;
+                }
+                    
+
+                for (int count = 1; count <= aprDays; count++)
+                {
+                    aprSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= mayDays; count++)
+                {
+                    maySum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= junDays; count++)
+                {
+                    junSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= julDays; count++)
+                {
+                    julSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= augDays; count++)
+                {
+                    augSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= sepDays; count++)
+                {
+                    sepSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= octDays; count++)
+                {
+                    octSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= novDays; count++)
+                {
+                    novSum += number;
+                    inFile >> number;
+                }
+
+                for (int count = 1; count <= decDays; count++)
+                {
+                    decSum += number;
+                    inFile >> number;
+                }
+
+                
 
                 //calculate averages
                 janAvg = janSum / janDays;
@@ -263,6 +294,7 @@ int main()
                 cout << "\nThe average steps each day for October are: " << octAvg;
                 cout << "\nThe average steps each day for November are: " << novAvg;
                 cout << "\nThe average steps each day for December are: " << decAvg;
+                cout << endl << endl;
                 break;
 
             }
