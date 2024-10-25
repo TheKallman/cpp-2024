@@ -2,27 +2,41 @@
 //
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
-int getRadius();
-int square(int number);
+double getRadius();
+double getSquare(double radius);
 
 int main()
 {
-    cout << "Enter the radius of a circle";
-    getRadius();
+    double radius, square, area;
+    const double PI = 3.141592653;
 
-    square();
+    radius = getRadius();
+
+    square = getSquare(radius);
+
+    area = PI * getSquare(radius);
+    cout << fixed << showpoint << setprecision(2);
+    cout << "The area of a circle with a radius of "
+        << radius << " is: " << area;
+
 }
 
-int getRadius()
-{
-    int radius;
-    cin >> radius;
 
+double getRadius()
+{
+    double radius;
+    cout << "Enter the radius of the circle: ";
+
+    cin >> radius;
     return radius;
 }
 
-int square(radius)
+double getSquare(double radius)
 {
+    double square = pow(radius, 2);
+
+    return square;
 
 }
