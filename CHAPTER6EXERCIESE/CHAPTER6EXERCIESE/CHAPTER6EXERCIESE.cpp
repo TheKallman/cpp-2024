@@ -2,12 +2,24 @@
 //
 
 #include <iostream>
+#include <iomanip>
+#include <cmath>
+#include <ctime>
+#include <cstdlib>
+#include <string>
+#include <fstream>
 using namespace std;
 
 void exercise1();
 void exercise2();
 void exercise3();
 void exercise4();
+
+// exercise 1 voids
+void getScore(int score);
+void calcAverage();
+//int findLowest();
+
 
 void quit();
 int main()
@@ -59,10 +71,35 @@ int main()
     }
 }
 
+// exercise 1 items
+
 void exercise1()
 {
-    cout << "a";
+    getScore(int score);
+
+    
 }
+
+void getScore(int score)
+{
+    //gets a score and stores it
+    cout << "Gimme your test score: ";
+    cin >> score;
+
+    return;
+}
+
+void calcAverage()
+{
+    cout << "hello";
+}
+
+//int findLowest()
+//{
+ //   cout << "hello";
+//}
+
+// exercise 2 items
 
 void exercise2()
 {
