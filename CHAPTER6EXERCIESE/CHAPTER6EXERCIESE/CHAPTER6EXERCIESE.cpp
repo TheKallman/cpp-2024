@@ -75,12 +75,12 @@ int main()
 
 void exercise1()
 {
-    getScore(int score);
+    getScore(int &score);
 
     
 }
 
-void getScore(int score)
+void getScore(int &score)
 {
     //gets a score and stores it
     cout << "Gimme your test score: ";
