@@ -34,7 +34,7 @@ int main()
     {
         do
         {
-            cout << "\nWelcome to my Chapter 5 Exercises.\n";
+            cout << "\nWelcome to my Chapter 6 Exercises.\n";
             cout << "Choose an exercise to run.\n";
             cout << "1. Lowest Score Drop\n";
             cout << "2. Overloaded Hospital\n";
@@ -187,14 +187,16 @@ void exercise3()
     //start running simulation
     cout << endl << endl << "Starting population: " << startPop;
 
-    int newPop = startPop + ((annualBirth/100) * startPop) - ((annualDeath/100) * startPop);
+    int prevPop = startPop;
+    int newPop = prevPop + ((annualBirth/100) * startPop) - ((annualDeath/100) * startPop);
     for (int counter = 1; counter <= years; counter++)
     {
         cout << "\nPopulation at the end of year " << counter << " is " << newPop;
 
         //formula to change population
-        newPop = newPop + ((annualBirth/100) * startPop) - ((annualDeath/100) * startPop);
-        
+        newPop = prevPop + ((annualBirth/100) * startPop) - ((annualDeath/100) * startPop);
+        //do the formula, then change the new pop to equal prevPop and then
+        //like do the formula
     }
     
 
