@@ -188,15 +188,14 @@ void exercise3()
     cout << endl << endl << "Starting population: " << startPop;
 
     int prevPop = startPop;
-    int newPop = prevPop + ((annualBirth/100) * startPop) - ((annualDeath/100) * startPop);
+    int newPop = prevPop + ((annualBirth / 100) * startPop) - ((annualDeath / 100) * startPop);
+
     for (int counter = 1; counter <= years; counter++)
     {
         cout << "\nPopulation at the end of year " << counter << " is " << newPop;
-
+        
         //formula to change population
-        newPop = prevPop + ((annualBirth/100) * startPop) - ((annualDeath/100) * startPop);
-        //do the formula, then change the new pop to equal prevPop and then
-        //like do the formula
+        newPop += ((annualBirth / 100) * newPop) - ((annualDeath / 100) * newPop);
     }
     
 
