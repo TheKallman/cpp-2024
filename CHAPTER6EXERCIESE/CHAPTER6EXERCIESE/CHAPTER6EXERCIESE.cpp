@@ -26,6 +26,11 @@ int inpatient();
 int outpatient();
 */
 
+//exercise 4 voids
+double popForm(double, double, double);
+
+
+
 
 int main()
 {
@@ -155,7 +160,8 @@ int outpatient()
 void exercise3()
 {
     //initialize
-    int startPop = 0, annualBirth = -1, annualDeath = -1, years = 0;
+    int years = 0;
+    double newPop = 0, startPop = 0, annualBirth = -1, annualDeath = -1;
 
     cout << "\nThis program calculates population change.\n";
 
@@ -187,18 +193,26 @@ void exercise3()
     //start running simulation
     cout << endl << endl << "Starting population: " << startPop;
 
-    int prevPop = startPop;
-    int newPop = prevPop + ((annualBirth / 100) * startPop) - ((annualDeath / 100) * startPop);
+    //int prevPop = startPop;
+    //int newPop = prevPop + (((annualBirth / 100) * startPop) - ((annualDeath / 100) * startPop));
+    annualBirth = annualBirth / 100;
+    annualDeath = annualDeath / 100;
 
     for (int counter = 1; counter <= years; counter++)
     {
+        newPop = popForm(startPop, annualBirth, annualDeath);
+
         cout << "\nPopulation at the end of year " << counter << " is " << newPop;
         
-        //formula to change population
-        newPop += ((annualBirth / 100) * newPop) - ((annualDeath / 100) * newPop);
+        startPop = newPop;
+   
     }
-    
+}
 
+double popForm(double pop, double birth, double death)
+{
+    cout << fixed << setprecision(0);
+    return pop + (birth * pop) - (death * pop);
 }
 
 void exercise4()
