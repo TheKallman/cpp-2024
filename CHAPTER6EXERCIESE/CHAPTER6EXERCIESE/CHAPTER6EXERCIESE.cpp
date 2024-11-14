@@ -29,6 +29,10 @@ int outpatient();
 //exercise 4 voids
 double popForm(double, double, double);
 
+//exercise 5 voids
+int computerChoice();
+int playerChoice();
+void winner(int, int);
 
 
 
@@ -217,9 +221,181 @@ double popForm(double pop, double birth, double death)
 
 void exercise4()
 {
-    cout << "d";
+    int comChoice = 0;
+    comChoice = computerChoice();
+
+    int plrChoice = 0;
+    plrChoice = playerChoice();
+
+    winner(comChoice, plrChoice);
 }
 
+int computerChoice()
+{
+    // 1 = rock
+    // 2 = paper
+    // 3 = scissors
+    // 4 = lizard
+    // 5 = spock
+
+    int comChoice;
+    int const max = 5, min = 1;
+
+    comChoice = (rand() % (max - min + 1)) + min;
+
+    return comChoice;
+}
+
+int playerChoice()
+{
+    int plrChoice;
+
+    cout << "\nChoose your weapon. (rock = 1, paper = 2, scissors = 3, lizard = 4, spock = 5)\n";
+    cout << ">> ";
+    cin >> plrChoice;
+    cout << endl;
+
+    return plrChoice;
+}
+
+void winner(int comChoice, int plrChoice)
+{
+    if (comChoice == plrChoice)
+    {
+        cout << "You both chose the same weapon!\n";
+        cout << "It's a tie!";
+    }
+
+    else if (comChoice == 1 && plrChoice == 2)
+    {
+        cout << "You chose: Paper\nComputer chose: Rock\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 1 && plrChoice == 3)
+    {
+        cout << "You chose: Scissors\nComputer chose: Rock\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 1 && plrChoice == 4)
+    {
+        cout << "You chose: Lizard\nComputer chose: Rock\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 1 && plrChoice == 5)
+    {
+        cout << "You chose: Spock\nComputer chose: Rock\n";
+        cout << "Player wins!";
+    }
+
+    // computer choice == 2 outcomes
+
+    else if (comChoice == 2 && plrChoice == 1)
+    {
+        cout << "You chose: Rock\nComputer chose: Paper\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 2 && plrChoice == 3)
+    {
+        cout << "You chose: Scissors\nComputer chose: Paper\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 2 && plrChoice == 4)
+    {
+        cout << "You chose: Lizard\nComputer chose: Paper\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 2 && plrChoice == 5)
+    {
+        cout << "You chose: Spock\nComputer chose: Paper\n";
+        cout << "Computer wins!";
+    }
+
+    // computer choice == 3 outcomes
+
+    else if (comChoice == 3 && plrChoice == 1)
+    {
+        cout << "You chose: Rock\nComputer chose: Scissors\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 3 && plrChoice == 2)
+    {
+        cout << "You chose: Paper\nComputer chose: Scissors\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 3 && plrChoice == 4)
+    {
+        cout << "You chose: Lizard\nComputer chose: Scissors\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 3 && plrChoice == 5)
+    {
+        cout << "You chose: Spock\nComputer chose: Scissors\n";
+        cout << "Player wins!";
+    }
+
+    // computer choice == 4 outcomes
+
+    else if (comChoice == 4 && plrChoice == 1)
+    {
+        cout << "You chose: Rock\nComputer chose: Lizard\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 4 && plrChoice == 2)
+    {
+        cout << "You chose: Paper\nComputer chose: Lizard\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 4 && plrChoice == 3)
+    {
+        cout << "You chose: Scissors\nComputer chose: Lizard\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 4 && plrChoice == 5)
+    {
+        cout << "You chose: Spock\nComputer chose: Lizard\n";
+        cout << "Computer wins!";
+    }
+
+    // computer choice == 5 outcomes
+
+    else if (comChoice == 5 && plrChoice == 1)
+    {
+        cout << "You chose: Rock\nComputer chose: Spock\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 5 && plrChoice == 2)
+    {
+        cout << "You chose: Paper\nComputer chose: Spock\n";
+        cout << "Computer wins!";
+    }
+
+    else if (comChoice == 5 && plrChoice == 3)
+    {
+        cout << "You chose: Scissors\nComputer chose: Spock\n";
+        cout << "Player wins!";
+    }
+
+    else if (comChoice == 5 && plrChoice == 4)
+    {
+        cout << "You chose: Lizard\nComputer chose: Spock\n";
+        cout << "Player wins!";
+    }
+
+    cout << endl;
+}
 
 void quit()
 {
