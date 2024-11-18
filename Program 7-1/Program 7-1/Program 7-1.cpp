@@ -20,7 +20,7 @@ int main()
 
     // ouput a summary of hours
 
-    cout << "The hours you entered are: ";
+    cout << "The hours you entered are:";
     cout << " " << hours[0];
     cout << " " << hours[1];
     cout << " " << hours[2];

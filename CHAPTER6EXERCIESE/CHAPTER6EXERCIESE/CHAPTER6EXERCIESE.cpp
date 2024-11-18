@@ -11,7 +11,7 @@
 using namespace std;
 
 //void exercise1();
-//void exercise2();
+void exercise2();
 void exercise3();
 void exercise4();
 void quit();
@@ -20,11 +20,10 @@ void quit();
 void getScore(int score);
 void calcAverage();
 int findLowest();
-
-// exercise 2 voids
-int inpatient();
-int outpatient();
 */
+// exercise 2 voids
+double patient(double, double, double, double);
+double patient(double, double);
 
 //exercise 4 voids
 double popForm(double, double, double);
@@ -64,7 +63,7 @@ int main()
             
         case 2:
         {
-            //exercise2();
+            exercise2();
             break;
         }
         case 3:
@@ -112,54 +111,73 @@ void calcAverage()
 //{
  //   cout << "hello";
 //}
-
+*/
 // exercise 2 items
 
 void exercise2()
 {
-    string patientType;
+    cout << fixed << setprecision(2);
 
-    cout << "This program will compute patient hospital charges.\n";
+    double patientType;
+    double medCharge, labFees;
+    double days, dailyRoomRate;
+    double totalCharge = 0;
+
+    cout << "\nThis program will compute patient hospital charges.\n";
     cout << "What was the patient type?\n";
-    cout << "In-patient or Out-patient? (I or O) ";
+    cout << "In-patient or Out-patient? (1 for in-patient or 2 for out-patient) ";
 
     cin >> patientType;
 
-    if (patientType == "I" || patientType == "i")
+    if (patientType == 1)
     {
-        inpatient();
+        cout << "\nNumber of days in the hospital: ";
+        cin >> days;
+
+        cout << "Daily room rate: $";
+        cin >> dailyRoomRate;
+
+        cout << "Medication charges: $";
+        cin >> medCharge;
+
+        cout << "Lab fees and other service charges: $";
+        cin >> labFees;
+
+        totalCharge = patient(days, dailyRoomRate, medCharge, labFees);
     }
-    else if (patientType == "O" || patientType == "o")
+
+    else if (patientType == 2)
     {
+        cout << "\nMedication charges: $";
+        cin >> medCharge;
 
-        outpatient();
+        cout << "Lab fees and other service charges: $";
+        cin >> labFees;
 
-        cout << "The total charges are $" << totalCharge;
+       totalCharge = patient(medCharge, labFees);
     }
-    
-}
-// these need to be overloaded (same name, different parameters)
-// i dont know how to do this
-int inpatient()
-{
-    int days, roomRate
+
+    cout << "\nThe total charges are $" << totalCharge << endl;;
 }
 
-int outpatient()
+double patient(double days, double dailyRoomRate, double medCharge, double labFees)
 {
-    int medicationCharge;
-    int serviceCharge;
+    cout << fixed << setprecision(2);
 
-    cout << "Medication charges: ";
-    cin >> medicationCharge;
-
-    cout << "Lab fees and other service charges: ";
-    cin >> serviceCharge;
-
-    int totalCharge = medicationCharge + serviceCharge;
+    double daysCost = days * dailyRoomRate;
+    double totalCharge = daysCost + medCharge + labFees;
 
     return totalCharge;
-}*/
+}
+
+double patient(double medCharge, double labFees)
+{
+    cout << fixed << setprecision(2);
+
+    double totalCharge = medCharge + labFees;
+
+    return totalCharge;
+}
 
 void exercise3()
 {
