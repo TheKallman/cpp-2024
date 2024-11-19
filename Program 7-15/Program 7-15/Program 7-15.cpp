@@ -1,20 +1,30 @@
-// Program 7-15.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
-
+#include <cstdlib>
+#include <iomanip>
+using namespace std;
 int main()
 {
-    std::cout << "Hello World!\n";
+    int const employees = 5;
+    int hours[employees];
+    double payRate[employees];
+
+    cout << "Enter the hours worked by " << employees << " employees and their hourly pay rate.\n";
+
+    for (int index = 0; index < employees; index++)
+    {
+        cout << "\nHours worked by employee #" << (index + 1) << ": ";
+        cin >> hours[employees];
+
+        cout << "Pay rate for employee #" << (index + 1) << ": ";
+        cin >> payRate[employees];
+    }
+
+    cout << "\nHere is the gross pay for each employee.\n";
+    cout << fixed << showpoint << setprecision(2);
+    for (int index = 0; index < employees; index++)
+    {
+        double grossPay = hours[index] * payRate[index];
+
+        cout << "Employee #" << (index + 1) << ":\t" << grossPay << endl;
+    }
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
