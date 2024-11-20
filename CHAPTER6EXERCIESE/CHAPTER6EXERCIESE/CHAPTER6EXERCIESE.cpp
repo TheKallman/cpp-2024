@@ -15,12 +15,12 @@ void exercise2();
 void exercise3();
 void exercise4();
 void quit();
-/*
+
 // exercise 1 voids
-void getScore(int score);
+void getScore(int &);
 void calcAverage();
 int findLowest();
-*/
+
 // exercise 2 voids
 double patient(double, double, double, double);
 double patient(double, double);
@@ -86,7 +86,7 @@ int main()
 
 // exercise 1 items
 
-/*void exercise1()
+void exercise1()
 {
     getScore();
 
@@ -107,11 +107,11 @@ void calcAverage()
     cout << "hello";
 }
 
-//int findLowest()
-//{
- //   cout << "hello";
-//}
-*/
+int findLowest()
+{
+    cout << "hello";
+}
+
 // exercise 2 items
 
 void exercise2()
