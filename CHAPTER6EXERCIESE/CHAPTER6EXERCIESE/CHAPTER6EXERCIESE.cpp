@@ -10,16 +10,17 @@
 #include <fstream>
 using namespace std;
 
-//void exercise1();
+void exercise1();
 void exercise2();
 void exercise3();
 void exercise4();
 void quit();
 
 // exercise 1 voids
-void getScore(int &);
-void calcAverage();
-int findLowest();
+void getScore(int[], int);
+double getTotal(int[], int);
+double getLowest(int[], int);
+
 
 // exercise 2 voids
 double patient(double, double, double, double);
@@ -32,8 +33,6 @@ double popForm(double, double, double);
 int computerChoice();
 int playerChoice();
 void winner(int, int);
-
-
 
 int main()
 {
@@ -57,7 +56,7 @@ int main()
         {
         case 1:
         {
-            //exercise1();
+            exercise1();
             break;
         }
             
@@ -86,30 +85,63 @@ int main()
 
 // exercise 1 items
 
+
 void exercise1()
 {
-    getScore();
+    int const SIZE = 5;
+    int scores[SIZE];
+    int total, lowest, average;
 
-    
+    getScore(scores, SIZE);
+
+    lowest = getLowest(scores, SIZE);
+
+
+    total = getTotal(scores, SIZE);
+
+    total = total - lowest;
+
+    average = total / (SIZE - 1);
+    cout << fixed << showpoint << setprecision(2);
+    cout << "The average of the scores ";
+    for (int index = 0; index < SIZE; index++)
+    {
+        cout << scores[index] << " ";
+    }
+    cout << "with the lowest score of " << lowest
+        << " dropped is: " << average << endl;
 }
 
-void getScore(int &score)
+void getScore(int scores[], int SIZE)
 {
-    //gets a score and stores it
-    cout << "Gimme your test score: ";
-    cin >> score;
-
-    return;
+    for (int index = 0; index < SIZE; index++)
+    {
+        cout << "Enter the score for test " << (index + 1) << ": ";
+        cin >> scores[index];
+    }
 }
 
-void calcAverage()
+double getTotal(int scores[], int SIZE)
 {
-    cout << "hello";
+    double total = 0.0;
+
+    for (int index = 0; index < SIZE; index++)
+    {
+        total += scores[index];
+    }
+    return total;
 }
 
-int findLowest()
+double getLowest(int scores[], int SIZE)
 {
-    cout << "hello";
+    double lowest = 101;
+
+    for (int index = 0; index < SIZE; index++)
+    {
+        if (scores[index] < lowest)
+            lowest = scores[index];
+    }
+    return lowest;
 }
 
 // exercise 2 items
