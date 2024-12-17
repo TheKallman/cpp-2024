@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int main()
+int menu()
 {
     // define variable for menu choice
     int choice = 0;
@@ -22,6 +22,6 @@ int main()
     } while (choice < 1 || choice > 6);
 
     cout << "------------------------------------";
-    // there was something else here
+    return choice;
 }
 
