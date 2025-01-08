@@ -53,12 +53,6 @@ int main()
 	}
 }
 
-void Exercise1();
-{
-	cout << "Yo1";
-	break;
-}
-
 void Exercise2();
 {
 	cout << "Yo2";
