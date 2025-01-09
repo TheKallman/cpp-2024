@@ -22,4 +22,58 @@ void Exercise1()
 	cin >> s1;
 	cout << "Test score 1: ";
 	cin >> t1s1;
+	cout << "Test score 2: ";
+	cin >> t2s1;
+	cout << "Test score 3: ";
+	cin >> t3s1;
+	cout << "Test score 4: ";
+	cin >> t4s1;
+
+	cout << "Enter the data for student 2.";
+	cout << "Student name: ";
+	cin >> s2;
+	cout << "Test score 1: ";
+	cin >> t1s2;
+	cout << "Test score 2: ";
+	cin >> t2s2;
+	cout << "Test score 3: ";
+	cin >> t3s2;
+	cout << "Test score 4: ";
+	cin >> t4s2;
+
+	cout << "Enter the data for student 3.";
+	cout << "Student name: ";
+	cin >> s3;
+	cout << "Test score 1: ";
+	cin >> t1s3;
+	cout << "Test score 2: ";
+	cin >> t2s3;
+	cout << "Test score 3: ";
+	cin >> t3s3;
+	cout << "Test score 4: ";
+	cin >> t4s3;
+
+	cout << "Enter the data for student 4.";
+	cout << "Student name: ";
+	cin >> s4;
+	cout << "Test score 1: ";
+	cin >> t1s4;
+	cout << "Test score 2: ";
+	cin >> t2s4;
+	cout << "Test score 3: ";
+	cin >> t3s4;
+	cout << "Test score 4: ";
+	cin >> t4s4;
+
+	cout << "Enter the data for student 5.";
+	cout << "Student name: ";
+	cin >> s5;
+	cout << "Test score 1: ";
+	cin >> t1s5;
+	cout << "Test score 2: ";
+	cin >> t2s5;
+	cout << "Test score 3: ";
+	cin >> t3s5;
+	cout << "Test score 4: ";
+	cin >> t4s5;
 }
