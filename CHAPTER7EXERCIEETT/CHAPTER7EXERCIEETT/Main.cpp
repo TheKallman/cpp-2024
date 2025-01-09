@@ -24,7 +24,7 @@ void Exercise1();
 void Exercise2();
 void Exercise3();
 void Exercise4();
-void Exercise5()
+void Exercise5();
 void quit();
 
 int main()
@@ -53,32 +53,32 @@ int main()
 	}
 }
 
-void Exercise2();
+void Exercise2()
 {
 	cout << "Yo2";
-	break;
+	
 }
 
-void Exercise3();
+void Exercise3()
 {
 	cout << "Yo3";
-	break;
+	
 }
 
-void Exercise4();
+void Exercise4()
 {
 	cout << "Yo4";
-	break;
+	
 }
 
-void Exercise5();
+void Exercise5()
 {
 	cout << "Yo5";
-	break;
+	
 }
 
-void quit();
+void quit()
 {
 	cout << "Thank you for using the Exercise Menu System.";
-	break;
+	
 }
