@@ -4,20 +4,6 @@
 #include <iomanip>
 using namespace std;
 
-
-
-
-// EVERY EXERCISE NEEDS TO BE IN A DIFFERENT FILE PLEASE FIX
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
-// 
 // declare function prototypes
 int menu();
 void Exercise1();
@@ -51,18 +37,6 @@ int main()
 		}
 		choice = menu();
 	}
-}
-
-void Exercise2()
-{
-	cout << "Yo2";
-	
-}
-
-void Exercise3()
-{
-	cout << "Yo3";
-	
 }
 
 void Exercise4()
