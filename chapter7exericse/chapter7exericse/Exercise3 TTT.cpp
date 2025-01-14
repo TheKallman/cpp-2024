@@ -31,6 +31,9 @@ void Exercise3()
 		// start gaming
 		cout << "Player One goes first (X's)." << endl;
 		
+		// bool for p1 turn
+		bool p1Turn = true;
 		
+		// change thing by matrix[row][col] = value;
 	}
 }
