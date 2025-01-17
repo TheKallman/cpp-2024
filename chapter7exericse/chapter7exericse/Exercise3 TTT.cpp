@@ -9,8 +9,9 @@ void Exercise3()
 
 
 
-	//FIX WINNING CONDITION THINGY
-	//FIX PUTTING SAME COORDINATE TWICE
+	//RESET BOARD AFTER FIRST GAME
+	// MAKE A TIE WIN CONDITION THINGY
+	
 
 
 	int rowNum = 1;
@@ -28,7 +29,7 @@ void Exercise3()
 
 	cout << endl;
 
-	if (choice == 'y' || choice == 'Y')
+	while (choice == 'y' || choice == 'Y')
 	{
 		// show board
 
@@ -72,13 +73,24 @@ void Exercise3()
 			else letter = 'O';
 
 			// GET SPOT TO PLACE X OR O
-
-			cout << "Enter your coordinates\n";
+			cout << "Enter your coordinates.\n";
 			cout << "Type the row number: ";
 			cin >> rowCoord;
 
 			cout << "Type the column number: ";
 			cin >> columnCoord;
+
+			while (BOARD[rowCoord - 1][columnCoord - 1] != '*')
+			{
+				cout << "\nThat spot is already taken. Try again.\n";
+				cout << "Enter your coordinates.\n";
+				cout << "Type the row number: ";
+				cin >> rowCoord;
+
+				cout << "Type the column number: ";
+				cin >> columnCoord;
+			}
+			
 
 			BOARD[rowCoord - 1][columnCoord - 1] = letter;
 
@@ -107,13 +119,13 @@ void Exercise3()
 			//CHECK WINS
 
 			// top row win
-			if (BOARD[0][0] == BOARD[0][1] == BOARD[0][2] == 'X')
+			if (BOARD[0][0] == 'X' && BOARD[0][1] == 'X' && BOARD[0][2] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
 
-			else if (BOARD[0][0] == BOARD[0][1] == BOARD[0][2] == 'O')
+			if (BOARD[0][0] == 'O' && BOARD[0][1] == 'O' && BOARD[0][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
@@ -121,85 +133,85 @@ void Exercise3()
 
 
 			// middle row win
-			else if (BOARD[1][0] == BOARD[1][1] == BOARD[1][2] == 'X')
+			if (BOARD[1][0] == 'X' && BOARD[1][1] == 'X' && BOARD[1][2] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
 
-			else if (BOARD[1][0] == BOARD[1][1] == BOARD[1][2] == 'O')
+			if (BOARD[1][0] == 'O' && BOARD[1][1] == 'O' && BOARD[1][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
 			}
 
 			// bottom row win
-			else if (BOARD[2][0] == BOARD[2][1] == BOARD[2][2] == 'X')
+			if (BOARD[2][0] == 'X' && BOARD[2][1] == 'X' && BOARD[2][2] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
-			else if (BOARD[2][0] == BOARD[2][1] == BOARD[2][2] == 'O')
+			if (BOARD[2][0] == 'O' && BOARD[2][1] == 'O' && BOARD[2][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
 			}
 
 			//  left column win
-			else if (BOARD[0][0] == BOARD[1][0] == BOARD[2][0] == 'X')
+			if (BOARD[0][0] == 'X' && BOARD[1][0] == 'X' && BOARD[2][0] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
-			else if (BOARD[0][0] == BOARD[1][0] == BOARD[2][0] == 'O')
+			if (BOARD[0][0] == 'O' && BOARD[1][0] == 'O' && BOARD[2][0] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
 			}
 
 			// middle column win
-			else if (BOARD[0][1] == BOARD[1][1] == BOARD[2][1] == 'X')
+			if (BOARD[0][1] == 'X' && BOARD[1][1] == 'X' && BOARD[2][1] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
-			else if (BOARD[0][1] == BOARD[1][1] == BOARD[2][1] == 'O')
+			if (BOARD[0][1] == 'O' && BOARD[1][1] == 'O' && BOARD[2][1] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
 			}
 
 			// right column win
-			else if (BOARD[0][2] == BOARD[1][2] == BOARD[2][2] == 'X')
+			if (BOARD[0][2] == 'X' && BOARD[1][2] == 'X' && BOARD[2][2] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
-			else if (BOARD[0][2] == BOARD[1][2] == BOARD[2][2] == 'O')
+			if (BOARD[0][2] == 'O' && BOARD[1][2] == 'O' && BOARD[2][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
 			}
 
 			// left to right diagonal win
-			else if (BOARD[0][0] == BOARD[1][1] == BOARD[2][2] == 'X')
+			if (BOARD[0][0] == 'X' && BOARD[1][1] == 'X' && BOARD[2][2] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
-			else if (BOARD[0][0] == BOARD[1][1] == BOARD[2][2] == 'O')
+			if (BOARD[0][0] == 'O' && BOARD[1][1] == 'O' && BOARD[2][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
 			}
 
 			// right to left diagonal win
-			else if (BOARD[0][2] == BOARD[1][1] == BOARD[0][0] == 'X')
+			if (BOARD[0][2] == 'X' && BOARD[1][1] == 'X' && BOARD[0][0] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 			}
-			else if (BOARD[0][2] == BOARD[1][1] == BOARD[0][0] == 'O')
+			if (BOARD[0][2] == 'O' && BOARD[1][1] == 'O' && BOARD[0][0] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
@@ -209,7 +221,10 @@ void Exercise3()
 			p1Turn++;
 		}
 		
-			
+		cout << "\nWould you like to play another game? (y/n) >> ";
+		cin >> choice;
+
+		cout << endl;
 		
 		
 
