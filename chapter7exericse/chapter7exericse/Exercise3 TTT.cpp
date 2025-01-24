@@ -9,7 +9,6 @@ void Exercise3()
 
 
 
-	//RESET BOARD AFTER FIRST GAME
 	// MAKE A TIE WIN CONDITION THINGY
 	
 
@@ -31,6 +30,18 @@ void Exercise3()
 
 	while (choice == 'y' || choice == 'Y')
 	{
+		// reset board after each game
+		BOARD[0][0] = '*';
+		BOARD[0][1] = '*';
+		BOARD[0][2] = '*';
+		
+		BOARD[1][0] = '*';
+		BOARD[1][1] = '*';
+		BOARD[1][2] = '*';
+
+		BOARD[2][0] = '*';
+		BOARD[2][1] = '*';
+		BOARD[2][2] = '*';
 		// show board
 
 		//column numbers
@@ -56,6 +67,7 @@ void Exercise3()
 		// bool for p1 turn
 		int p1Turn = 1;
 		bool winStatus = false;
+		bool tie = true;
 
 		// initialize make coordiante place for players
 		int rowCoord;
@@ -123,12 +135,14 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			if (BOARD[0][0] == 'O' && BOARD[0][1] == 'O' && BOARD[0][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 
@@ -137,12 +151,14 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			if (BOARD[1][0] == 'O' && BOARD[1][1] == 'O' && BOARD[1][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			// bottom row win
@@ -150,11 +166,13 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 			if (BOARD[2][0] == 'O' && BOARD[2][1] == 'O' && BOARD[2][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			//  left column win
@@ -162,11 +180,13 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 			if (BOARD[0][0] == 'O' && BOARD[1][0] == 'O' && BOARD[2][0] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			// middle column win
@@ -174,11 +194,13 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 			if (BOARD[0][1] == 'O' && BOARD[1][1] == 'O' && BOARD[2][1] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			// right column win
@@ -186,11 +208,13 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 			if (BOARD[0][2] == 'O' && BOARD[1][2] == 'O' && BOARD[2][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			// left to right diagonal win
@@ -198,11 +222,13 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 			if (BOARD[0][0] == 'O' && BOARD[1][1] == 'O' && BOARD[2][2] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
+				tie = false;
 			}
 
 			// right to left diagonal win
@@ -210,10 +236,19 @@ void Exercise3()
 			{
 				cout << "Player One wins!";
 				winStatus = true;
+				tie = false;
 			}
 			if (BOARD[0][2] == 'O' && BOARD[1][1] == 'O' && BOARD[0][0] == 'O')
 			{
 				cout << "Player Two wins!";
+				winStatus = true;
+				tie = false;
+			}
+
+			// tie
+			if (winStatus == false && tie == true;)
+			{
+				cout << "It's a tie!";
 				winStatus = true;
 			}
 
