@@ -232,13 +232,13 @@ void Exercise3()
 			}
 
 			// right to left diagonal win
-			if (BOARD[0][2] == 'X' && BOARD[1][1] == 'X' && BOARD[0][0] == 'X')
+			if (BOARD[0][2] == 'X' && BOARD[1][1] == 'X' && BOARD[2][0] == 'X')
 			{
 				cout << "Player One wins!";
 				winStatus = true;
 				tie = false;
 			}
-			if (BOARD[0][2] == 'O' && BOARD[1][1] == 'O' && BOARD[0][0] == 'O')
+			if (BOARD[0][2] == 'O' && BOARD[1][1] == 'O' && BOARD[2][0] == 'O')
 			{
 				cout << "Player Two wins!";
 				winStatus = true;
@@ -246,10 +246,20 @@ void Exercise3()
 			}
 
 			// tie
-			if (winStatus == false && tie == true;)
+			if ((BOARD[0][0] == 'X' || BOARD[0][0] == 'O') &&
+				(BOARD[0][1] == 'X' || BOARD[0][1] == 'O') &&
+				(BOARD[0][2] == 'X' || BOARD[0][2] == 'O') &&
+
+				(BOARD[1][0] == 'X' || BOARD[1][0] == 'O') &&
+				(BOARD[1][1] == 'X' || BOARD[1][1] == 'O') &&
+				(BOARD[1][2] == 'X' || BOARD[1][2] == 'O') &&
+
+				(BOARD[2][0] == 'X' || BOARD[2][0] == 'O') &&
+				(BOARD[2][1] == 'X' || BOARD[2][1] == 'O') &&
+				(BOARD[2][2] == 'X' || BOARD[2][2] == 'O'))
 			{
-				cout << "It's a tie!";
 				winStatus = true;
+				cout << "It's a tie!";
 			}
 
 			// change turn to next player
