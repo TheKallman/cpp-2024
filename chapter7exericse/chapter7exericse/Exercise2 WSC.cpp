@@ -14,6 +14,6 @@ void Exercise2()
 		cout << "File not found.";
 	else // file exists, continue
 	{
-		cout << "File foind.";
+		while
 	}
 }
