@@ -29,4 +29,15 @@ int Exercise4()
         response.push_back(currentResponse);
     }
 
+    bool again = true;
+    string question;
+
+    while (again == true)
+    {
+        cout << "Ask a question for the mysterious and all-knowing Magic 7 Ball to answer.\n>> ";
+        cin >> question;
+
+        //random stuff in chapter 3 slide 79
+    }
+
 }
