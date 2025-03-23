@@ -39,12 +39,6 @@ int main()
 	}
 }
 
-void Exercise4()
-{
-	cout << "Yo4";
-	
-}
-
 void Exercise5()
 {
 	cout << "Yo5";

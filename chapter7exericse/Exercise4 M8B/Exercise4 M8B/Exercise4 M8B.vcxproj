@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{39a644ca-659a-46a4-9827-70e4f1fd23ab}</ProjectGuid>
-    <RootNamespace>chapter7exericse</RootNamespace>
+    <ProjectGuid>{a54cf2a6-7485-48a5-b191-355f17b609f6}</ProjectGuid>
+    <RootNamespace>Exercise4M8B</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,11 +127,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\CHAPTER7EXERCIEETT\CHAPTER7EXERCIEETT\Main.cpp" />
-    <ClCompile Include="chapter7exericse.cpp" />
-    <ClCompile Include="Exercise1 Grade Book.cpp" />
-    <ClCompile Include="Exercise2 WSC.cpp" />
-    <ClCompile Include="Exercise3 TTT.cpp" />
     <ClCompile Include="Exercise4 M8B.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

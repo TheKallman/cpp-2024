@@ -6,13 +6,6 @@ using namespace std;
 
 void Exercise3()
 {
-
-
-
-	// MAKE A TIE WIN CONDITION THINGY
-	
-
-
 	int rowNum = 1;
 
 
