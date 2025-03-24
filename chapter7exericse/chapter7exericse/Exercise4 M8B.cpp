@@ -46,7 +46,7 @@ void Exercise4()
         
         //make a random number to input as the index to create a random response
         //the - 1 and + 1 at the end might need to be changed to 0
-        int ranIndex = (rand() % (response.size() - 1 + 1)) + 1;
+        int ranIndex = (rand() % (response.size() - 0 + 1)) + 0;
 
         cout << response[ranIndex];
         
