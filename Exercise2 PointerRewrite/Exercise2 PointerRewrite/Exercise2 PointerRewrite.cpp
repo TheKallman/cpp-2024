@@ -9,7 +9,7 @@ int doSomething(int* x, int* y)
 	return *x + *y;
 }
 
-int main()
+void Exercise2()
 {
 	int excelsior = 10;
 	int* x = &excelsior;
@@ -18,7 +18,7 @@ int main()
 	int* y = &yam;
 
 	
-	cout << "x = " << * x << " y = " << *y << endl;
+	cout << "\nx = " << * x << " y = " << *y << endl;
 
 	doSomething(x, y);
 

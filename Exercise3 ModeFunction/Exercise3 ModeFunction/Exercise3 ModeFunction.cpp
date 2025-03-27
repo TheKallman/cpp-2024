@@ -4,7 +4,7 @@
 using namespace std;
 
 
-int* notmainfunction(int size)
+int* notmainfunction2(int size)
 {
     int* numbers = new int[size]();
     return numbers;
@@ -13,7 +13,7 @@ int* notmainfunction(int size)
 int mode(int* array, int size)
 {
     int* highest = max_element(array, array + size);
-    int* fakeMap = notmainfunction(*highest + 1);
+    int* fakeMap = notmainfunction2(*highest + 1);
 
     for (int i = 0; i < size; i++)
     {
@@ -40,14 +40,14 @@ int mode(int* array, int size)
     return modeIndex;
 }
 
-int main()
+void Exercise3()
 {
     const int size = 5;
     
     int number = 0;
 
-    int* numbers = notmainfunction(size);
-    cout << "Enter in 5 numbers.\n";
+    int* numbers = notmainfunction2(size);
+    cout << "\nEnter in 5 numbers.\n";
 
     for (int i = 0; i < size; i++)
     {
@@ -65,6 +65,6 @@ int main()
     }
 
     int arrayMode = mode(numbers, size);
-    cout << "The mode of the array is " << arrayMode;
+    cout << "The mode of the array is " << arrayMode << endl;
 }
 

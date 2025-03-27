@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int* notmainfunction(int size)
+int* notmainfunction3(int size)
 {
     int* numbers = new int[size]();
     return numbers;
@@ -9,16 +9,28 @@ int* notmainfunction(int size)
 
 int* newfunction(int* array, int size)
 {
-    size++;
+    int newSize = 5;
+    int* listTwime = notmainfunction3(newSize);
+
+    listTwime[0] = 0;
+
+    
+    for (int p = 0; p < newSize; p++)
+    {
+        listTwime[p+1] = array[p];
+    }
+    
+
+    return listTwime;
 }
 
-int main()
+void Exercise4()
 {
     int size = 4;
     int element = 0;
-    int* listPrime = notmainfunction(size);
+    int* listPrime = notmainfunction3(size);
 
-    cout << "Input 4 integers\n";
+    cout << "\nInput 4 integers\n";
 
     for (int i = 0; i < size; i++)
     {
@@ -26,10 +38,22 @@ int main()
         listPrime[i] = element;
     }
 
-    /*for (int i = 0; i < size; i++)
+    cout << "\nThis is your array before the shift:\n";
+
+    for (int i = 0; i < size; i++)
     {
         cout << listPrime[i] << " ";
-    }*/
+    }
 
     int* listTwime = newfunction(listPrime, size);
+    int newSize = 5;
+
+    cout << "\nThis is your array after the shift:\n";
+
+    for (int i = 0; i < newSize; i++)
+    {
+        cout << listTwime[i] << " ";
+    }
+
+    cout << endl;
 }

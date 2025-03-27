@@ -57,12 +57,12 @@ int* notmainfunction(int tests)
     return aray;
 }
 
-int main()
+void Exercise1()
 {
     int score = 0;
 
     int tests = 0;
-    cout << "How many tests do you want? ";
+    cout << "\nHow many tests do you want? ";
     cin >> tests;
     
     int* arrray = notmainfunction(tests);
@@ -94,7 +94,7 @@ int main()
     }
 
     double arrayAverage = average(arrray, tests);
-    cout << "\nThe average of the array with the lowest number dropped is: " << arrayAverage;
+    cout << "\nThe average of the array with the lowest number dropped is: " << arrayAverage << endl;
 }
 
 
