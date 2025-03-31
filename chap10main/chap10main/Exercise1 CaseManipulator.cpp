@@ -5,23 +5,48 @@
 #include <vector>
 using namespace std;
 
-vector<string> upperfunction(string sentence)
+void switchCase(string sentence)
 {
-	//counter to get the size of the sentence
-	int counter = 0;
-
-	//initialezre vector to add the uppercase'd letters to it
-	vector<string> sentenceVector;
+	cout << '\n';
 	for (char c : sentence)
 	{
-		cout << c << " ";
-		cout << endl << toupper(c);
-		sentenceVector[counter] = c;
-		counter++;
-
-		//for (int i = 0; i < counter; i++)
+		if (isupper(c))
+		{
+			cout << (char)tolower(c);
+		}
+		else if (islower(c))
+		{
+			cout << (char)toupper(c);
+		}
+		else
+		{
+			cout << c;
+		}
 	}
-	return sentenceVector;
+	return;
+}
+
+void lowerfunction(string sentence)
+{
+	cout << '\n';
+	for (char c : sentence)
+	{
+		cout << (char)tolower(c);
+
+	}
+	return;
+}
+
+void upperfunction(string sentence)
+{
+	cout << '\n';
+	for (char c : sentence)
+	{
+		
+		cout << (char)toupper(c);
+		
+	}
+	return;
 }
 void Exercise1()
 {
@@ -30,7 +55,15 @@ void Exercise1()
 
 	//ask user for string
 	cout << "Write a single word or sentence.\n";
-	cin >> sentence;
+	cin.clear();
+	cin.ignore(INT_MAX, '\n');
+	getline(cin, sentence);
 
-	vector<string> sentenceVector = upperfunction(sentence);
+	upperfunction(sentence);
+	cout << '\n';
+	lowerfunction(sentence);
+	cout << '\n';
+	switchCase(sentence);
+	cout << '\n';
+	
 }
