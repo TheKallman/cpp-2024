@@ -32,7 +32,7 @@ int main()
             ": ";
         cin >> workers[index].hours;
 
-        cout << "Enter the payrate for employee " << workers[index].payRate <<
+        cout << "Enter the payrate for employee " << workers[index].name <<
             ": ";
         cin >> workers[index].payRate;
         cout << endl;
