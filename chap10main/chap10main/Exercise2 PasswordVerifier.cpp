@@ -15,21 +15,25 @@ void Exercise2()
 		"\nAn uppercase character.\nA lowercase character.\nA digit.\n";
 
 	//type in password
-	cout << "Enter your password: ";
-	cin >> password;
+	cout << "\nEnter your password: ";
+	cin.ignore();
+	getline(cin, password);
 
 	//check to make sure the password meets the requirements
 	//get bools for checking
+	bool hasLength = true;
 	bool hasUpper = false;
 	bool hasLower = false;
 	bool hasDigit = false;
 
 	if (password.length() < 9)
 	{
-		cout << "Your password has inadequate length.\nTry again: ";
+		hasLength = false;
+		cout << "Your password has inadequate length.\n";
 	}
 	for (char c : password)
 	{
+		
 		if (islower(c))
 		{
 			hasLower = true;
@@ -56,7 +60,7 @@ void Exercise2()
 	{
 		cout << "Your password does not have a digit.\n";
 	}
-	else
+	if (hasLower == true && hasUpper == true && hasDigit == true && hasLength == true)
 	{
 		cout << "Your password meets the requirements.\n";
 	}
