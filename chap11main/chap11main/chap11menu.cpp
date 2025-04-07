@@ -9,15 +9,14 @@ int menu()
     do
     {
         // Display the menu for the user
-        cout << "\nWelcome to the Chapter 10 Exercise Menu\n";
+        cout << "\nWelcome to the Chapter 11 Exercise Menu\n";
         cout << "Please choose from the following choices.\n";
-        cout << "1.\tExercise 11 Case Manipulator\n";
-        cout << "2.\tExercie 12 Password Verifier\n";
-        cout << "3.\tExercise 15 Character Analysis\n";
-        cout << "4.\tQuit\n";
+        cout << "1.\tExercise 9 Speakers' Bureau\n";
+        cout << "2.\tExercie 13 Drink Machine Simulator \n";
+        cout << "3.\tQuit\n";
         cout << "Choice: > ";
         cin >> choice;
-    } while (choice < 1 || choice > 4);
+    } while (choice < 1 || choice > 3);
 
     cout << "------------------------------------";
     return choice;
