@@ -9,8 +9,11 @@ struct Speaker
 	string Name;
 	int telephone;
 	string topic;
-	double fee;
+	double fee = 0;
 };
+
+Speaker speakerArray[10];
+int index;
 
 void create(Speaker& speaker);
 void change(Speaker& speaker);
@@ -41,43 +44,52 @@ void Exercise1()
 		case 4:
 			exit();
 		}
-		cout << "Enter your choice: ";
+		cout << "\nEnter your choice: ";
 		cin >> choice;
 	}
 }
 
 void create(Speaker& speaker)
 {
-	cout << "Speaker name: ";
-	cin >> speaker.Name;
 
-	cout << "Telephone: ";
-	cin >> speaker.telephone;
-	
-	cout << "Speaking topic: ";
-	cin >> speaker.topic;
-
-	cout << "Fee required: ";
-	cin >> speaker.fee;
-
-	if (speaker.fee < 0)
+	for (index = 0; index < 10; index++)
 	{
-		cout << "Do not make the fee negative.";
+		cout << "Speaker name: ";
+		cin.ignore();
+		getline(cin, speakerArray[index].Name);
+
+		cout << "Telephone: ";
+		cin >> speakerArray[index].telephone;
+
+		cout << "Speaking topic: ";
+		cin.ignore();
+		getline(cin, speakerArray[index].topic);
+
 		cout << "Fee required: ";
 		cin >> speaker.fee;
+
+		if (speaker.fee < 0)
+		{
+			cout << "Do not make the fee negative.";
+			cout << "Fee required: ";
+			cin >> speakerArray[index].fee;
+		}
 	}
+	cout << "You have entered information for speaker number " << index;
 }
 
 void change(Speaker& speaker)
 {
 	cout << "Speaker name: ";
-	cin >> speaker.Name;
+	cin.ignore();
+	getline(cin, speaker.Name);
 
 	cout << "Telephone: ";
 	cin >> speaker.telephone;
 
 	cout << "Speaking topic: ";
-	cin >> speaker.topic;
+	cin.ignore();
+	getline(cin, speaker.topic);
 
 	cout << "Fee required: ";
 	cin >> speaker.fee;
