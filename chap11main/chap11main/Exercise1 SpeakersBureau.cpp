@@ -13,7 +13,7 @@ struct Speaker
 };
 
 Speaker speakerArray[10];
-int index;
+int index = -1;
 
 void create(Speaker& speaker);
 void change(Speaker& speaker);
@@ -27,6 +27,21 @@ void Exercise1()
 {
 	Speaker speaker;
 	int choice = 0;
+
+	do
+	{
+		// Display the menu for the user
+		cout << "\nWelcome to the Speakers' Bureau\n";
+		cout << "Please choose from the following choices.\n";
+		cout << "1.\tEnter new speaker information\n";
+		cout << "2.\tChange speaker information\n";
+		cout << "3.\tDisplay all speaker information\n";
+		cout << "4.\tQuit\n";
+		cout << "Choice: > ";
+		cin >> choice;
+	} while (choice < 1 || choice > 4);
+
+	cout << endl;
 
 	while (choice != 4)
 	{
@@ -51,61 +66,71 @@ void Exercise1()
 
 void create(Speaker& speaker)
 {
+	index++;
+	cout << "Speaker name: ";
+	cin.ignore();
+	getline(cin, speakerArray[index].Name);
 
-	for (index = 0; index < 10; index++)
+	cout << "Telephone: ";
+	cin >> speakerArray[index].telephone;
+
+	cout << "Speaking topic: ";
+	cin.ignore();
+	getline(cin, speakerArray[index].topic);
+
+	cout << "Fee required: ";
+	cin >> speakerArray[index].fee;
+
+	while (speakerArray[index].fee < 0)
 	{
-		cout << "Speaker name: ";
-		cin.ignore();
-		getline(cin, speakerArray[index].Name);
-
-		cout << "Telephone: ";
-		cin >> speakerArray[index].telephone;
-
-		cout << "Speaking topic: ";
-		cin.ignore();
-		getline(cin, speakerArray[index].topic);
-
+		cout << "Do not make the fee negative.\n";
 		cout << "Fee required: ";
-		cin >> speaker.fee;
-
-		if (speaker.fee < 0)
-		{
-			cout << "Do not make the fee negative.";
-			cout << "Fee required: ";
-			cin >> speakerArray[index].fee;
-		}
+		cin >> speakerArray[index].fee;
 	}
-	cout << "You have entered information for speaker number " << index;
+	
+	cout << "You have entered information for speaker number " << index << endl;
+	
 }
 
 void change(Speaker& speaker)
 {
+	//get speaker from array
+	cout << "Which speaker number would you like to change? ";
+	cin >> index;
+
+	//output the speaker
+	cout << "Speaker name: " << speakerArray[index].Name << endl;
+	cout << "Telephone: " << speakerArray[index].telephone << endl;
+	cout << "Speaking topic: " << speakerArray[index].topic << endl;
+	cout << "Fee required: $" << speakerArray[index].fee << endl;
+	cout << endl << endl;
+
 	cout << "Speaker name: ";
 	cin.ignore();
-	getline(cin, speaker.Name);
+	getline(cin, speakerArray[index].Name);
 
 	cout << "Telephone: ";
-	cin >> speaker.telephone;
+	cin >> speakerArray[index].telephone;
 
 	cout << "Speaking topic: ";
 	cin.ignore();
-	getline(cin, speaker.topic);
+	getline(cin, speakerArray[index].topic);
 
 	cout << "Fee required: ";
-	cin >> speaker.fee;
+	cin >> speakerArray[index].fee;
 
-	if (speaker.fee < 0)
+	if (speakerArray[index].fee < 0)
 	{
 		cout << "Do not make the fee negative.";
 		cout << "Fee required: ";
-		cin >> speaker.fee;
+		cin >> speakerArray[index].fee;
 	}
 }
 
 void display(Speaker& speaker)
 {
-	cout << endl << speaker.Name;
-	cout << speaker.telephone;
-	cout << speaker.topic;
-	cout << speaker.fee << endl;
+	cout << endl << "Speaker name: " << speakerArray[index].Name << endl;
+	cout << "Telephone: " << speakerArray[index].telephone << endl;
+	cout << "Speaking topic: " << speakerArray[index].topic << endl;
+	cout << "Fee required: $" << speakerArray[index].fee << endl;
 }
