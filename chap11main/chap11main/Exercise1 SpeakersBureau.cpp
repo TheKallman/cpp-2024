@@ -129,8 +129,12 @@ void change(Speaker& speaker)
 
 void display(Speaker& speaker)
 {
-	cout << endl << "Speaker name: " << speakerArray[index].Name << endl;
-	cout << "Telephone: " << speakerArray[index].telephone << endl;
-	cout << "Speaking topic: " << speakerArray[index].topic << endl;
-	cout << "Fee required: $" << speakerArray[index].fee << endl;
+	for (int counter= 0; counter < 10; counter++)
+	{
+		cout << endl << "Speaker name: " << speakerArray[counter].Name << endl;
+		cout << "Telephone: " << speakerArray[counter].telephone << endl;
+		cout << "Speaking topic: " << speakerArray[counter].topic << endl;
+		cout << "Fee required: $" << speakerArray[counter].fee << endl;
+	}
+	
 }
