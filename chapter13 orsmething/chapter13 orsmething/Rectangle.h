@@ -14,6 +14,10 @@ public:
 	double getWidth() const;
 	double getLength() const;
 	double getArea() const;
+	~Rectangle()
+	{
+		cout << "\nObject destroyed\n";
+	}
 };
 
 #endif
