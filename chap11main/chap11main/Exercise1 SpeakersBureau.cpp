@@ -19,19 +19,13 @@ void create(Speaker& speaker);
 void change(Speaker& speaker);
 void display(Speaker& speaker);
 
-void exit()
+int speakerMenu()
 {
-	cout << "Thank you for using the speaker bureau thing. Goodbye.";
-}
-void Exercise1()
-{
-	Speaker speaker;
 	int choice = 0;
-
 	do
 	{
 		// Display the menu for the user
-		cout << "\nWelcome to the Speakers' Bureau\n";
+		
 		cout << "Please choose from the following choices.\n";
 		cout << "1.\tEnter new speaker information\n";
 		cout << "2.\tChange speaker information\n";
@@ -40,6 +34,17 @@ void Exercise1()
 		cout << "Choice: > ";
 		cin >> choice;
 	} while (choice < 1 || choice > 4);
+	return choice;
+}
+void exit()
+{
+	cout << "Thank you for using the speaker bureau thing. Goodbye.";
+}
+void Exercise1()
+{
+	Speaker speaker;
+	cout << "\nWelcome to the Speakers' Bureau\n";
+	int choice = speakerMenu();
 
 	cout << endl;
 
@@ -59,7 +64,7 @@ void Exercise1()
 		case 4:
 			exit();
 		}
-		cout << "\nEnter your choice: ";
+		speakerMenu();
 		cin >> choice;
 	}
 }

@@ -23,4 +23,18 @@ int main()
 
 	//display data for item1
 	cout << "\nDescription: " << item1.getDescription() << endl;
+	cout << "Cost: $" << item1.getCost() << endl;
+	cout << "Units: " << item1.getUnits() << endl;
+
+	//display data for item 2
+	cout << "\nDescription: " << item2.getDescription() << endl;
+	cout << "Cost: $" << item2.getCost() << endl;
+	cout << "Units: " << item2.getUnits() << endl;
+
+	//display data for item 3
+	cout << "\nDescription: " << item3.getDescription() << endl;
+	cout << "Cost: $" << item3.getCost() << endl;
+	cout << "Units: " << item3.getUnits() << endl;
+
+	return 0;
 }
