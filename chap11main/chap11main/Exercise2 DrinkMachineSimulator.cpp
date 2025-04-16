@@ -8,12 +8,16 @@ struct Drinks
 {
 	string name = "";
 	double cost = 0.0;
-	int count = 0;
+	int count = 20;
 };
+
+Drinks drinkArray[5];
+int index2 = 0;
 
 int vendingMenu()
 {
-	int choose = 0;
+	int choose;
+	
 	do
 	{
 		// Display the menu for the user
@@ -28,56 +32,280 @@ int vendingMenu()
 	} while (choose < 1 || choose > 6);
 	return choose;
 }
+
 void cola(Drinks& drink)
 {
-	drink.name = "Cola";
-	drink.cost = 0.75;
-	drink.count = 20;
+	index2 = 0;
+	drinkArray[index2].name = "Cola";
+	drinkArray[index2].cost = 0.75;
+	
+	//check stock of drink
+	if (drinkArray[index2].count == 0)
+	{
+		cout << "Some fatty drank it all. Sorry.";
+	}
+	else
+	{
+		//get money from user
+		double money = 0;
+		cout << "\nEnter an amount of money: ";
+		cin >> money;
 
-	//get money from user
-	double money = 0;
-	cout << "Enter an amount of money: ";
-	cin >> money;
+		//make sure user doesnt have negative or more than one dollar
+		while (money < 0 || money > 1)
+		{
+			cout << "You can't have negative money or over a dollar money.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
 
-	//give user their drink
-	cout << "Hit, whack, WHAM, POWWWW, bop!";
-	cout << "Enjoy your beverage! Maybe wait for the CO2 to go down.";
+		while (money < drinkArray[index2].cost)
+		{
+			cout << "Ooooh sorry, but you're poor! Enter at least " << drinkArray[index2].cost <<
+				" and no more than 1 dollar.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
 
-	//give change if needed
-	double change = money - drink.cost;
+		//give user their drink
+		cout << "\nHit, whack, WHAM, POWWWW, bop!\n";
+		cout << "Enjoy your beverage! Maybe wait for the CO2 to go down.\n";
+
+		//give user change
+		double change = money - drinkArray[index2].cost;
+
+		cout << "\nChange calculated: " << change << endl;
+		cout << "Your change, " << change <<
+			" has just dropped into the Change Dispenser.\n";
+
+		drinkArray[index2].count--;
+
+		cout << "\nThere are " << drinkArray[index2].count << " drinks of that type left.\n";
+	}
 }
 
 void root(Drinks& drink)
 {
-	drink.name = "Root Beer";
-	drink.cost = 0.75;
-	drink.count = 20;
+	index2 = 1;
+	drinkArray[index2].name = "Root Beer";
+	drinkArray[index2].cost = 0.75;
+	
+	//check stock of drink
+	if (drinkArray[index2].count == 0)
+	{
+		cout << "Some fatty drank it all. Sorry.";
+	}
+	else
+	{
+		//get money from user
+		double money = 0;
+		cout << "\nEnter an amount of money: ";
+		cin >> money;
+
+		//make sure user doesnt have negative or more than one dollar
+		while (money < 0 || money > 1)
+		{
+			cout << "You can't have negative money or over a dollar money.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		while (money < drinkArray[index2].cost)
+		{
+			cout << "Ooooh sorry, but you're poor! Enter at least " << drinkArray[index2].cost <<
+				" and no more than 1 dollar.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		//give user their drink
+		cout << "\nHit, whack, WHAM, POWWWW, bop!\n";
+		cout << "Enjoy your beverage! Maybe wait for the CO2 to go down.\n";
+
+		//give user change
+		double change = money - drinkArray[index2].cost;
+
+		cout << "\nChange calculated: " << change << endl;
+		cout << "Your change, " << change <<
+			" has just dropped into the Change Dispenser.\n";
+
+		drinkArray[index2].count--;
+
+		cout << "\nThere are " << drinkArray[index2].count << " drinks of that type left.\n";
+	}
 }
 
 void lemon(Drinks& drink)
 {
-	drink.name = "Lemon-Lime";
-	drink.cost = 0.75;
-	drink.count = 20;
+	index2 = 2;
+	drinkArray[index2].name = "Lemon-Lime";
+	drinkArray[index2].cost = 0.75;
+	
+	//check stock of drink
+	if (drinkArray[index2].count == 0)
+	{
+		cout << "Some fatty drank it all. Sorry.";
+	}
+	else
+	{
+		//get money from user
+		double money = 0;
+		cout << "\nEnter an amount of money: ";
+		cin >> money;
+
+		//make sure user doesnt have negative or more than one dollar
+		while (money < 0 || money > 1)
+		{
+			cout << "You can't have negative money or over a dollar money.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		while (money < drinkArray[index2].cost)
+		{
+			cout << "Ooooh sorry, but you're poor! Enter at least " << drinkArray[index2].cost <<
+				" and no more than 1 dollar.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		//give user their drink
+		cout << "\nHit, whack, WHAM, POWWWW, bop!\n";
+		cout << "Enjoy your beverage! Maybe wait for the CO2 to go down.\n";
+
+		//give user change
+		double change = money - drinkArray[index2].cost;
+
+		cout << "\nChange calculated: " << change << endl;
+		cout << "Your change, " << change <<
+			" has just dropped into the Change Dispenser.\n";
+
+		drinkArray[index2].count--;
+
+		cout << "\nThere are " << drinkArray[index2].count << " drinks of that type left.\n";
+	}
 }
 
 void grape(Drinks& drink)
 {
-	drink.name = "Grape Soda";
-	drink.cost = 0.80;
-	drink.count = 20;
+	index2 = 3;
+	drinkArray[index2].name = "Grape Soda";
+	drinkArray[index2].cost = 0.80;
+	
+	//check stock of drink
+	if (drinkArray[index2].count == 0)
+	{
+		cout << "Some fatty drank it all. Sorry.";
+	}
+	else
+	{
+		//get money from user
+		double money = 0;
+		cout << "\nEnter an amount of money: ";
+		cin >> money;
+
+		//make sure user doesnt have negative or more than one dollar
+		while (money < 0 || money > 1)
+		{
+			cout << "You can't have negative money or over a dollar money.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		while (money < drinkArray[index2].cost)
+		{
+			cout << "Ooooh sorry, but you're poor! Enter at least " << drinkArray[index2].cost <<
+				" and no more than 1 dollar.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		//give user their drink
+		cout << "\nHit, whack, WHAM, POWWWW, bop!\n";
+		cout << "Enjoy your beverage! Maybe wait for the CO2 to go down.\n";
+
+		//give user change
+		double change = money - drinkArray[index2].cost;
+
+		cout << "\nChange calculated: " << change << endl;
+		cout << "Your change, " << change <<
+			" has just dropped into the Change Dispenser.\n";
+
+		drinkArray[index2].count--;
+
+		cout << "\nThere are " << drinkArray[index2].count << " drinks of that type left.\n";
+	}
 }
 
 void cream(Drinks& drink)
 {
-	drink.name = "Cream Soda";
-	drink.cost = 0.80;
-	drink.count = 20;
+	index2 = 4;
+	drinkArray[index2].name = "Cream Soda";
+	drinkArray[index2].cost = 0.80;
+	
+	//check stock of drink
+	if (drinkArray[index2].count == 0)
+	{
+		cout << "Some fatty drank it all. Sorry.";
+	}
+	else
+	{
+		//get money from user
+		double money = 0;
+		cout << "\nEnter an amount of money: ";
+		cin >> money;
+
+		//make sure user doesnt have negative or more than one dollar
+		while (money < 0 || money > 1)
+		{
+			cout << "You can't have negative money or over a dollar money.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		while (money < drinkArray[index2].cost)
+		{
+			cout << "Ooooh sorry, but you're poor! Enter at least " << drinkArray[index2].cost <<
+				" and no more than 1 dollar.\n";
+			cout << "Enter an amount of money: ";
+			cin >> money;
+		}
+
+		//give user their drink
+		cout << "\nHit, whack, WHAM, POWWWW, bop!\n";
+		cout << "Enjoy your beverage! Maybe wait for the CO2 to go down.\n";
+
+		//give user change
+		double change = money - drinkArray[index2].cost;
+
+		cout << "\nChange calculated: " << change << endl;
+		cout << "Your change, " << change <<
+			" has just dropped into the Change Dispenser.\n";
+
+		drinkArray[index2].count--;
+
+		cout << "\nThere are " << drinkArray[index2].count << " drinks of that type left.\n";
+	}
 }
 
 void leave()
 {
+	int drinksTaken;
+	int drinkProfit;
+
 	cout << "Thank you for using the vending machine. See ya later.";
+
+	//output money gained from vending machine
+	for (int i = 0; i < 5; i++)
+	{
+		if (drinkArray[i].count < 20)
+		{
+			drinksTaken = 20 - drinkArray[i].count;
+			drinkProfit = drinksTaken * drinkArray[i].cost;
+		}
+	}
+
+	cout << "Total earnings: $" << drinkProfit;
 }
 
 void Exercise2()
@@ -113,6 +341,5 @@ void Exercise2()
 		}
 		cout << endl;
 		choose = vendingMenu();
-		cin >> choose;
 	}
 }
