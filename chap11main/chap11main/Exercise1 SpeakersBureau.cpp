@@ -38,8 +38,9 @@ int speakerMenu()
 }
 void exit()
 {
-	cout << "Thank you for using the speaker bureau thing. Goodbye.";
+	cout << "Thank you for using the speaker bureau thing. Goodbye.\n";
 }
+
 void Exercise1()
 {
 	Speaker speaker;
@@ -48,7 +49,7 @@ void Exercise1()
 
 	cout << endl;
 
-	while (choice != 4)
+	while (choice != 5)
 	{
 		switch (choice)
 		{
@@ -63,6 +64,7 @@ void Exercise1()
 			break;
 		case 4:
 			exit();
+			return;
 		}
 		speakerMenu();
 		cin >> choice;

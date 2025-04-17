@@ -290,10 +290,11 @@ void cream(Drinks& drink)
 
 void leave()
 {
-	int drinksTaken;
-	int drinkProfit;
+	double drinksTaken;
+	double drinkProfit;
+	double moneyMade = 0.0;
 
-	cout << "Thank you for using the vending machine. See ya later.";
+	cout << "Thank you for using the vending machine. See ya later.\n";
 
 	//output money gained from vending machine
 	for (int i = 0; i < 5; i++)
@@ -302,10 +303,12 @@ void leave()
 		{
 			drinksTaken = 20 - drinkArray[i].count;
 			drinkProfit = drinksTaken * drinkArray[i].cost;
+			moneyMade += drinkProfit;
 		}
 	}
 
-	cout << "Total earnings: $" << drinkProfit;
+	cout << "Total earnings: $" << moneyMade << endl;
+
 }
 
 void Exercise2()
@@ -316,7 +319,7 @@ void Exercise2()
 
 	cout << endl;
 
-	while (choose != 6)
+	while (choose != 7)
 	{
 		switch (choose)
 		{
@@ -338,6 +341,7 @@ void Exercise2()
 			break;
 		case 6:
 			leave();
+			return;
 		}
 		cout << endl;
 		choose = vendingMenu();
