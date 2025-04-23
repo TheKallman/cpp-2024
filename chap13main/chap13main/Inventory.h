@@ -19,20 +19,48 @@ public:
 		itemNumber = 0;
 		cost = 0;
 		quantity = 0;
+		setTotalCost();
 	}
+
 	Inventory(int n, double c, int q)
 	{
 		itemNumber = n;
 		cost = c;
 		quantity = q;
+		setTotalCost();
 	}
-	void setItemNumber(int n);
-	void setQuantity(int q);
-	void setCost(double c);
-	void setTotalCost();
-	int getItemNumber();
-	int getQuantity();
-	double getCost();
-	double getTotalCost();
+
+	void setItemNumber(int n)
+	{
+		itemNumber = n;
+	}
+	void setQuantity(int q)
+	{
+		quantity = q;
+	}
+	void setCost(double c)
+	{
+		cost = c;
+	}
+	void setTotalCost()
+	{
+		totalCost = cost * quantity;
+	}
+	int getItemNumber()
+	{
+		return itemNumber;
+	}
+	int getQuantity()
+	{
+		return quantity;
+	}
+	double getCost()
+	{
+		return cost;
+	}
+	double getTotalCost()
+	{
+		return totalCost;
+	}
 };
 #endif

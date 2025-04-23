@@ -5,14 +5,21 @@
 
 using namespace std;
 
-Inventory::Inventory()
+void Exercise1()
 {
-	int number = 0;
-	double cost = 0.0;
-	int quantity = 0;
-}
+	int itemNum;
+	int amount;
+	double price;
+	double costTotal;
 
-Inventory::Inventory(int number, double cost, int quantity);
-{
-	cout <<
+	cout << "Enter the item number: ";
+	cin >> itemNum;
+
+	cout << "Enter the amount of items: ";
+	cin >> amount;
+
+	cout << "Enter the cost of the items: ";
+	cin >> price;
+
+	Inventory(itemNum, amount, price)
 }
