@@ -7,12 +7,22 @@ using namespace std;
 
 void Exercise1()
 {
+
+	
+
+	//user variables
 	int itemNum;
 	int amount;
 	double price;
 	double costTotal;
 
-	cout << "Enter the item number: ";
+	//class variable
+	int class_itemNum;
+	int class_amount;
+	double class_price;
+	double class_costTotal;
+
+	cout << "\nEnter the item number: ";
 	cin >> itemNum;
 
 	cout << "Enter the amount of items: ";
@@ -21,5 +31,31 @@ void Exercise1()
 	cout << "Enter the cost of the items: ";
 	cin >> price;
 
-	Inventory(itemNum, amount, price)
+	//calculate cost total
+	costTotal = price * amount;
+
+	//send values to this thing to test class
+	Inventory inventory(itemNum, amount, price);
+
+
+	class_itemNum = inventory.getItemNumber();
+	class_amount = inventory.getQuantity();
+	class_price = inventory.getCost();
+	class_costTotal = inventory.getTotalCost();
+
+	//compare values to make sure they the same
+	//	user values
+	cout << "You entered\n";
+	cout << "Item number: " << itemNum << endl;
+	cout << "Amount of items: " << amount << endl;
+	cout << "Cost: " << price << endl;
+	cout << "Total Cost: " << costTotal << endl << endl << endl;
+
+	//	class values
+	cout << "The class got\n";
+	cout << "Item number: " << class_itemNum << endl;
+	cout << "Amount of items: " << class_amount << endl;
+	cout << "Cost: " << class_price << endl;
+	cout << "Total Cost: " << class_costTotal << endl << endl << endl;
+
 }

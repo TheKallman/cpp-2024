@@ -128,9 +128,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CashRegister.h" />
     <ClInclude Include="Inventory.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CashRegister.cpp" />
     <ClCompile Include="chap13MENU.cpp" />
     <ClCompile Include="chap13main.cpp" />
     <ClCompile Include="Inventory.cpp" />
