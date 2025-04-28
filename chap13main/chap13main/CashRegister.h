@@ -6,7 +6,7 @@ using namespace std;
 class CashRegister
 {
 private:
-	string item;
+	Inventory item;
 	int purchaseQuantity;
 	double cost;
 	double markup;
@@ -25,10 +25,12 @@ public:
 		tax = 0.0;
 		total = 0.0;
 	}*/
-	CashRegister(string itemName, int q)
+
+	CashRegister(string itemName, int q, double c)
 	{
 		item = itemName;
 		purchaseQuantity = q;
+		
 	}
 
 	//set
