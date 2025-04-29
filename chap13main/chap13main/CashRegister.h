@@ -6,38 +6,32 @@ using namespace std;
 class CashRegister
 {
 private:
-	Inventory item;
 	int purchaseQuantity;
 	double cost;
-	double markup;
+	double const markup = 0.30;
 	double subTotal;
-	double tax;
+	double const tax = 0.06;
 	double total;
 
 public:
 	//constnruct
-	/*CashRegister()
+	CashRegister()
 	{
-		item = "";
 		purchaseQuantity = 0;
 		cost = 0.0;
-		markup = 0.0;
-		tax = 0.0;
 		total = 0.0;
-	}*/
+	}
 
 	CashRegister(string itemName, int q, double c)
 	{
-		item = itemName;
 		purchaseQuantity = q;
 		
 	}
 
 	//set
-	void setItem(string i)
-	{
-		item = i;
-	}
+	//void setItem(string i)
+	//{
+	//}
 	void setPurchaseQuantity(int pq)
 	{
 		purchaseQuantity = pq;
@@ -46,17 +40,9 @@ public:
 	{
 		cost = c;
 	}
-	void setMarkup(double m)
-	{
-		markup = m;
-	}
 	void setSubTotal(double st)
 	{
 		subTotal = st;
-	}
-	void setTax(double t)
-	{
-		tax = t;
 	}
 	void setTotal(double tl)
 	{
@@ -64,10 +50,10 @@ public:
 	}
 
 	//get
-	string getItem() const
-	{
-		return item;
-	}
+	//string getItem() const
+	//{
+	//	return item;
+	//}
 	int getPurchaseQuantity() const
 	{
 		return purchaseQuantity;

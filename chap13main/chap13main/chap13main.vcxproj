@@ -132,10 +132,10 @@
     <ClInclude Include="Inventory.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CashRegister.cpp" />
     <ClCompile Include="chap13MENU.cpp" />
     <ClCompile Include="chap13main.cpp" />
     <ClCompile Include="Inventory.cpp" />
+    <ClCompile Include="shopping.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

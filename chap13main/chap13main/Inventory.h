@@ -22,17 +22,17 @@ public:
 		setTotalCost();
 	}
 
-	Inventory(int n, int q, double c)
+	Inventory(string n, int q, double c)
 	{
-		itemNumber = n;
+		name = n;
 		quantity = q;
 		cost = c;
 		setTotalCost();
 	}
 
-	void setItemNumber(int n)
+	void setName(int n)
 	{
-		itemNumber = n;
+		name = n;
 	}
 	void setQuantity(int q)
 	{
@@ -46,9 +46,9 @@ public:
 	{
 		totalCost = cost * quantity;
 	}
-	int getItemNumber() const
+	string getName() const
 	{
-		return itemNumber;
+		return name;
 	}
 	int getQuantity() const
 	{

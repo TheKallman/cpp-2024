@@ -6,8 +6,8 @@ using namespace std;
 
 // declare function prototypes
 int menu();
-void Exercise1();
-void Exercise2();
+void Shopper();
+
 
 
 void quit();
@@ -15,18 +15,16 @@ void quit();
 int main()
 {
 	int choice = menu();
-	while (choice != 3)
+	while (choice != 2)
 	{
 		switch (choice)
 		{
 		case 1:
-			Exercise1();
+			Shopper();
 			break;
 		case 2:
-			Exercise2();
-			break;
-		case 3:
 			quit();
+			break;			
 		}
 		choice = menu();
 	}
