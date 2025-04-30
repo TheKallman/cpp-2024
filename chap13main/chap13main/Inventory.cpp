@@ -11,7 +11,7 @@ void Exercise1()
 	
 
 	//user variables
-	int itemNum;
+	string name;
 	int amount;
 	double price;
 	double costTotal;
@@ -22,8 +22,9 @@ void Exercise1()
 	double class_price;
 	double class_costTotal;
 
-	cout << "\nEnter the item number: ";
-	cin >> itemNum;
+	cout << "\nEnter the item name: ";
+	cin.ignore();
+	getline(cin, name);
 
 	cout << "Enter the amount of items: ";
 	cin >> amount;
@@ -35,10 +36,10 @@ void Exercise1()
 	costTotal = price * amount;
 
 	//send values to this thing to test class
-	Inventory inventory(itemNum, amount, price);
+	Inventory inventory(name, amount, price);
 
 
-	class_itemNum = inventory.getItemNumber();
+	//class_itemNum = inventory.getName();
 	class_amount = inventory.getQuantity();
 	class_price = inventory.getCost();
 	class_costTotal = inventory.getTotalCost();
@@ -46,14 +47,14 @@ void Exercise1()
 	//compare values to make sure they the same
 	//	user values
 	cout << "You entered\n";
-	cout << "Item number: " << itemNum << endl;
+	cout << "Item number: " << name << endl;
 	cout << "Amount of items: " << amount << endl;
 	cout << "Cost: " << price << endl;
 	cout << "Total Cost: " << costTotal << endl << endl << endl;
 
 	//	class values
 	cout << "The class got\n";
-	cout << "Item number: " << class_itemNum << endl;
+	//cout << "Item number: " << class_itemNum << endl;
 	cout << "Amount of items: " << class_amount << endl;
 	cout << "Cost: " << class_price << endl;
 	cout << "Total Cost: " << class_costTotal << endl << endl << endl;
