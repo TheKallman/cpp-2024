@@ -4,12 +4,16 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <cctype>
 using namespace std;
 
+int index = 0;
 void Shopper()
 {
 	string name;
+	string itemChosen;
 	int quantity;
+	int quantityChosen;
 	double cost;
 	double markedCost;
 
@@ -26,7 +30,8 @@ void Shopper()
 	for (int i = 0; i < 5; i++)
 	{
 		cout << "Name of item: ";
-		cin >> name;
+		cin.ignore();
+		getline(cin, name);
 		cout << "How many items: ";
 		cin >> quantity;
 		cout << "Cost of item: ";
@@ -42,6 +47,7 @@ void Shopper()
 	//test
 	cout << invVec[1].getName();
 
+	//output formatted menu
 	cout << "\nHere are the items in the store:\n";
 	cout << "Name\t\tQuantity\t\tCost\n";
 	cout << "-------------------------------------------------------\n";
@@ -51,5 +57,59 @@ void Shopper()
 			<< "\t\t" << fixed << setprecision(2) << invVec[p].getCost() << endl;
 	}
 
-	cout << "Choose something to buy yo!";
+	//ask user to buy something
+	cout << "\nChoose something to buy yo!\n";
+	cout << "I want to buy: ";
+	cin.ignore();
+	getline(cin, itemChosen);
+
+	//redo if user types in something not in list
+	while (itemChosen != invVec[0].getName() && itemChosen != invVec[1].getName() && itemChosen != invVec[2].getName() && itemChosen != invVec[3].getName() && itemChosen != invVec[4].getName())
+	{
+		cout << "\nI can't find: " << itemChosen << "\nTry again.\n";
+		cout << "I want to buy: ";
+		getline(cin, itemChosen);
+	}
+
+	//get the right item index to find the same item's quantity and cost
+	if (itemChosen == invVec[0].getName())
+	{
+		index = 0;
+	}
+	else if (itemChosen == invVec[1].getName())
+	{
+		index = 1;
+	}
+	else if (itemChosen == invVec[2].getName())
+	{
+		index = 2;
+	}
+	else if (itemChosen == invVec[3].getName())
+	{
+		index = 3;
+	}
+	else if (itemChosen == invVec[4].getName())
+	{
+		index = 4;
+	}
+
+	//get how many user wants to buy
+	cout << "\nI want to buy this many " << itemChosen << "s: ";
+	cin >> quantityChosen;
+	
+	//redo if user goes over the stock number of the item or if user inputs non-number
+	while (quantityChosen > invVec[index].getQuantity() || !isdigit(quantityChosen) == false)
+	{
+		cout << "\nYou either put a number above the amount stocked " <<
+			"or not a number at all.\nPlease input a number lower " <<
+			"than or the same as the amount stocked.\n";
+
+		cout << "Here is a reminder on how many " << itemChosen << "s are stocked\n";
+		cout << invVec[index].getQuantity() << endl;
+		cout << "I want to buy this many " << itemChosen << "s: ";
+		cin >> quantityChosen;
+	}
+	
+
+	
 }
