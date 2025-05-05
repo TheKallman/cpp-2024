@@ -38,6 +38,10 @@ public:
 	{
 		quantity = q;
 	}
+	void changeQuantity(int q)
+	{
+		quantity -= q;
+	}
 	void setCost(double c)
 	{
 		cost = c;

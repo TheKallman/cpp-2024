@@ -7,9 +7,12 @@
 #include <cctype>
 using namespace std;
 
-int index = 0;
+
 void Shopper()
 {
+	int index = 0;
+	int itemQuantity = 0;
+
 	string name;
 	string itemChosen;
 	int quantity;
@@ -47,6 +50,8 @@ void Shopper()
 		Inventory Inventory(name, quantity, markedCost);
 		invVec.push_back(Inventory);
 	}
+
+	
 	while (tolower(reshop) == 'y')
 	{
 		
@@ -97,12 +102,15 @@ void Shopper()
 			index = 4;
 		}
 
+		//make quantity a variable so it can be changed later
+		itemQuantity = invVec[index].getQuantity();
+
 		//get how many user wants to buy
 		cout << "\nI want to buy this many " << itemChosen << "s: ";
 		cin >> quantityChosen;
 
 		//redo if user goes over the stock number of the item or if user inputs non-number
-		while (quantityChosen > invVec[index].getQuantity() || !isdigit(quantityChosen))
+		while (quantityChosen > itemQuantity /* || !isdigit(quantityChosen) */ )
 		{
 			cout << "\nYou either put a number above the amount stocked " <<
 				"or not a number at all.\nPlease input a number lower " <<
@@ -116,8 +124,7 @@ void Shopper()
 		}
 
 		//subtract amount bought from original
-		int itemQuantity = invVec[index].getQuantity();
-		itemQuantity -= quantityChosen;
+		invVec[index].changeQuantity(quantityChosen);
 
 		//calculate how much purchase will cost
 		double itemCost = invVec[index].getCost();
