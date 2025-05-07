@@ -6,7 +6,7 @@
 using namespace std;
 
 void play();
-int options();
+int choosing();
 
 int main()
 {
@@ -31,6 +31,7 @@ int main()
 
 void play()
 {
+    string firstThing; //user stands up
     string plrName; // user name
 
     cout << "\nBefore you start your journey, what is your name, traveler?\n";
@@ -42,7 +43,7 @@ void play()
     {
         cout << "\nPlease not such a mouthful. Less than 16 characters is best.\n";
         cout << ">> ";
-        cin.ignore();
+        
         getline(cin, plrName);
     }
 
@@ -50,13 +51,49 @@ void play()
     cout << "You awake in the basement of some building with no recollection of how you got there.\n"
         << "You are lying on the floor in your own drool. I suggest the first thing to do is stand up.\n";
     cout << "What would you like to do?\n";
-    options();
+    cout << ">> ";
+    
+    getline(cin, firstThing);
+
+    //make everything lowercase to make validation easier
+    for (char& c : firstThing)
+    {
+        c = tolower(c);
+    }
+    
+    while (!(firstThing == "stand up" || firstThing == "stand"))
+    {
+        cout << "\nI suggest the first thing you do is stand up.\n";
+        cout << "What would you like to do?\n";
+        cout << ">> ";
+        
+        getline(cin, firstThing);
+
+        for (char& c : firstThing)
+        {
+            c = tolower(c);
+        }
+    }
+
+    cout << "Great! Now that you are standing, surely there is something else you can do\n";
+    
+    choosing();
 
 }
 
-int options()
+int choosing()
 {
-    int choice;
+    int action;
+    cout << "What would you like to do?\n";
+    cout << ">> ";
+    //make a list of actions the user can do
+    vector<string> actionList;
+    actionList.push_back("look"); // look around room
+    actionList.push_back("pick"); // pick up item
+    actionList.push_back("walk"); // walk to another room
+    actionList.push_back("sit"); // sit on something
+    //if (action.find = )
+    /*int choice;
 
     cout << "\nHere are your options:\n";
     cout << "1. Look around\n";
@@ -68,7 +105,10 @@ int options()
 
     if (choice == 3)
     {
-        cout << "Which way would you like to go (N/S/E/W)"
+        cout << "Which way would you like to go? ";
+       
     }
 
+    return 2;*/
+    return 2;
 }
