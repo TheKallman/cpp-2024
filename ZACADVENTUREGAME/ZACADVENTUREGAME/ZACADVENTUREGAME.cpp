@@ -1,3 +1,8 @@
+#include "Actions.h"
+#include "Rooms.h"
+#include "Backpack.h"
+
+
 #include <iostream>
 #include <string>
 #include <iomanip>
@@ -7,6 +12,7 @@ using namespace std;
 
 void play();
 int choosing();
+
 
 int main()
 {
@@ -83,16 +89,29 @@ void play()
 
 int choosing()
 {
-    int action;
+    string action;
     cout << "What would you like to do?\n";
     cout << ">> ";
-    //make a list of actions the user can do
+    getline(cin, action);
     vector<string> actionList;
+    //make a list of actions the user can do
     actionList.push_back("look"); // look around room
     actionList.push_back("pick"); // pick up item
     actionList.push_back("walk"); // walk to another room
     actionList.push_back("sit"); // sit on something
-    //if (action.find = )
+    string word1 = actionList[0];
+    string word2 = actionList[1];
+    string word3 = actionList[2];
+    string word4 = actionList[3];
+
+    vector<vector<string>> roomList;
+    roomList[0].push_back("cellar");
+
+    if (action.find(actionList[0]))
+    {
+        if 
+    }
+        
     /*int choice;
 
     cout << "\nHere are your options:\n";
