@@ -54,7 +54,7 @@ void play()
     }
 
     cout << "\nHello " << plrName << " your journey starts now!\n";
-    cout << "You awake in the basement of some building with no recollection of how you got there.\n"
+    cout << "You awake in the foyer of an unknown house.\n"
         << "You are lying on the floor in your own drool. I suggest the first thing to do is stand up.\n";
     cout << "What would you like to do?\n";
     cout << ">> ";
@@ -95,21 +95,61 @@ int choosing()
     getline(cin, action);
     vector<string> actionList;
     //make a list of actions the user can do
-    actionList.push_back("look"); // look around room
-    actionList.push_back("pick"); // pick up item
-    actionList.push_back("walk"); // walk to another room
+    actionList.push_back("look around"); // look around room
+    actionList.push_back("pick up"); // pick up item
+    actionList.push_back("walk north"); // walk to room north
+    actionList.push_back("walk east"); // walk to room east
+    actionList.push_back("walk south"); // walk to room south
+    actionList.push_back("walk west"); // walk to room west
     actionList.push_back("sit"); // sit on something
     string word1 = actionList[0];
     string word2 = actionList[1];
     string word3 = actionList[2];
     string word4 = actionList[3];
 
-    vector<vector<string>> roomList;
-    roomList[0].push_back("cellar");
+    vector<vector<string>> roomList(6, vector<string>(6));
+    roomList[0].push_back("garage");
+    roomList[0].push_back("laundry room");
+    roomList[0].push_back("living room");
+
+    roomList[1].push_back("foyer");
+    roomList[1].push_back("kitchen");
+    roomList[1].push_back("dining room");
+    roomList[1].push_back("patio");
+
+    roomList[2].push_back("\t");
+    roomList[2].push_back("sitting area");
+    roomList[2].push_back("study");
+    
+    roomList[3].push_back("bedroom one");
+    roomList[3].push_back("hallway");
+    roomList[3].push_back("hallway");
+    roomList[3].push_back("hallway");
+    roomList[3].push_back("hallway");
+    roomList[3].push_back("master bedroom");
+
+    roomList[4].push_back("bedroom two");
+    roomList[4].push_back("hallway");
+    roomList[4].push_back("\t");
+    roomList[4].push_back("master bathroom");
+    roomList[4].push_back("closet");
+    
+    roomList[5].push_back("\t");
+    roomList[5].push_back("bathroom");
+
+
+    for (const auto& row : roomList)
+    {
+        for (const auto& element : row)
+        {
+            cout << element << " ";
+        }
+        cout << endl;
+    }
 
     if (action.find(actionList[0]))
     {
-        if 
+        cout << "hello";
     }
         
     /*int choice;
