@@ -2,14 +2,18 @@
 #ifndef BACKPACK_H
 #define BACKPACK_H
 #include <string>
+#include <vector>
 using namespace std;
 class Backpack
 {
 private:
 	string itemName; //name of the item you have
 	int amount; //how many of the item you have
+	vector<string> pockets;
 
 public:
+	void addItem(string item);
+
 	Backpack()
 	{
 		itemName = "";

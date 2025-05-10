@@ -16,4 +16,4 @@ public:
 		roomName = n;
 	}
 };
-#endif ROOMS_H
+#endif

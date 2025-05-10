@@ -1,7 +1,7 @@
-#include "Actions.h"
-#include "Rooms.h"
+//#include "Actions.h"
+//#include "Rooms.h"
 #include "Backpack.h"
-
+#include "Foyer.h"
 
 #include <iostream>
 #include <string>
@@ -18,7 +18,7 @@ int main()
 {
     char uselessQuestion; //real
 
-    cout << "Welcome to Zac's Adventure Game!\n";
+    cout << "Welcome to Zac's Escape House!\n";
     cout << "Start? (y/n)\n";
     cout << ">> ";
     cin >> uselessQuestion;
@@ -37,6 +37,7 @@ int main()
 
 void play()
 {
+    Foyer foyer;
     string firstThing; //user stands up
     string plrName; // user name
 
@@ -53,7 +54,8 @@ void play()
         getline(cin, plrName);
     }
 
-    cout << "\nHello " << plrName << " your journey starts now!\n";
+    cout << "\nHello " << plrName << ", your journey starts now!\n";
+    
     cout << "You awake in the foyer of an unknown house.\n"
         << "You are lying on the floor in your own drool. I suggest the first thing to do is stand up.\n";
     cout << "What would you like to do?\n";
@@ -83,13 +85,14 @@ void play()
 
     cout << "Great! Now that you are standing, surely there is something else you can do\n";
     
-    choosing();
+    foyer.onEnter();
 
 }
 
 int choosing()
 {
-    string action;
+    cout << "hello";
+    /*string action;
     cout << "What would you like to do?\n";
     cout << ">> ";
     getline(cin, action);
@@ -152,7 +155,7 @@ int choosing()
         cout << "hello";
     }
         
-    /*int choice;
+    int choice;
 
     cout << "\nHere are your options:\n";
     cout << "1. Look around\n";
@@ -169,5 +172,5 @@ int choosing()
     }
 
     return 2;*/
-    return 2;
+    return 0;
 }
