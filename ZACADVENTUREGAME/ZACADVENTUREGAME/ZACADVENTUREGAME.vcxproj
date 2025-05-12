@@ -130,12 +130,34 @@
     <ClCompile Include="Actions.cpp" />
     <ClCompile Include="Backpack.cpp" />
     <ClCompile Include="Rooms.cpp" />
+	<ClCompile Include="Foyer.cpp" />
+    <ClCompile Include="Kitchen.cpp" />
+    <ClCompile Include="Item.cpp" />
+	<ClCompile Include="Garage.cpp" />
+	<ClCompile Include="SittingArea.cpp" />
+	<ClCompile Include="LaundryRoom.cpp" />
+	<ClCompile Include="Hallway.cpp" />
+	<ClCompile Include="Closet.cpp" />
+	<ClCompile Include="Bathroom.cpp" />
+	<ClCompile Include="MasterBedroom.cpp" />
+	<ClCompile Include="Study.cpp" />
     <ClCompile Include="ZACADVENTUREGAME.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Actions.h" />
     <ClInclude Include="Backpack.h" />
     <ClInclude Include="Rooms.h" />
+	<ClInclude Include="Foyer.h" />
+	<ClInclude Include="Kitchen.h" />
+	<ClInclude Include="Item.h" />
+	<ClInclude Include="Garage.h" />
+	<ClInclude Include="SittingArea.h" />
+	<ClInclude Include="LaundryRoom.h" />
+	<ClInclude Include="Closet.h" />
+	<ClInclude Include="Hallway.h" />
+	<ClInclude Include="Bathroom.h" />
+	<ClInclude Include="Study.h" />
+	<ClInclude Include="MasterBedroom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
