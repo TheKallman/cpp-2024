@@ -3,6 +3,7 @@
 #include "SittingArea.h"
 #include "Foyer.h"
 #include "Backpack.h"
+#include "DiningRoom.h"
 #include "Item.h"
 #include <iostream>
 #include <string>
@@ -12,10 +13,12 @@
 #include <cmath>
 using namespace std;
 
-void Kitchen::onEnter()
+void DiningRoom::onEnter()
 {
+    DiningRoom diningRoom;
     LaundryRoom laundryRoom;
     SittingArea sittingArea;
+    Kitchen kitchen;
     Item item;
     Foyer foyer;
     Backpack backpack;
@@ -32,50 +35,74 @@ void Kitchen::onEnter()
         //outputs for if the user asks to go a certain direction
         if (userInput == "go east" || userInput == "east" || userInput == "walk east" || userInput == "move east")
         {
-            // Placeholder: call DiningRoom.onEnter() here when implemented
+            //patio.onEnter(); when exists
         }
         else if (userInput == "go north" || userInput == "north" || userInput == "walk north" || userInput == "move north")
         {
-            laundryRoom.onEnter();
+            //livingRoom.onEnter(); when exists
         }
         else if (userInput == "go south" || userInput == "south" || userInput == "walk south" || userInput == "move south")
         {
-            sittingArea.onEnter();
+            cout << "\nThere is a wall.\n";
         }
         else if (userInput == "go west" || userInput == "west" || userInput == "walk west" || userInput == "move west")
         {
-            foyer.onEnter();
+            kitchen.onEnter();
         }
 
         //outputs for if the user asks to look around hte room
         else if (userInput == "look" || userInput == "look around" || userInput == "take a look" || userInput == "take a gander"
             || userInput == "see" || userInput == "view" || userInput == "view room")
         {
-            cout << "\nTo the north is the laundry room.\nTo the east is the dining room.\nTo the south is the sitting area.\nTo the west is the foyer\n"
-                << "There is a sleek, stainless steel dishwasher.\nSeveral drawers are in the marble-topped island.\n"
-                << "A microwave is fixed above the stovetop.\nThe oven under the stovetop is still on.\n";
+            cout << "\nTo the north is the living room.\nTo the east is the patio.\nTo the south is a wall.\nTo the west is the kitchen.\n"
+                << "\nThere is a dining table with chairs around it.\nThere is a cake on the center of the table.\nA china cabinet is against the wall.\n";
         }
 
-        //output for if the user wants to look at the dishwasher
-        else if (userInput == "look dishwasher" || userInput == "look at dishwasher" || userInput == "dishwasher" || userInput == "take a look at dishwasher"
-            || userInput == "view dishwasher" || userInput == "inspect dishwasher" || userInput == "look at the dishwasher" || userInput == "take a look at the dishwasher")
-        {
-            cout << "\nThe dishwasher is empty besides for the top drawer which is full of silverware arranged in the number 6.\n";
-        }
-
-        //output for looking at drawer
-        else if (userInput == "open drawer" || userInput == "open up the drawer" || userInput == "open the drawer" || userInput == "open up drawer"
-            || userInput == "look drawer" || userInput == "look at drawer" || userInput == "drawer" || userInput == "take a look at drawer"
-            || userInput == "view drawer" || userInput == "inspect drawer" || userInput == "look at the drawer" || userInput == "take a look at the drawer")
-        {
+        //output for if the user wants to look at the dining table
+        else if (userInput == "look dining table" || userInput == "look at dining table" || userInput == "dining table" || userInput == "take a look at dining table"
+            || userInput == "view dining table" || userInput == "inspect dining table" || userInput == "look at the dining table" || userInput == "take a look at the dining table"
             
-            cout << "\nThere's a grenade.\nIt explodes, but you survive.\nNothing is damaged.\n";
+            || userInput == "look table" || userInput == "look at table" || userInput == "table" || userInput == "take a look at table"
+            || userInput == "view table" || userInput == "inspect table" || userInput == "look at the table" || userInput == "take a look at the table")
+        {
+            cout << "\nThe dining table is lathered and very smooth.\nYou think about taking a nap on it.\nHowever, there is a cake in the way.\n";
         }
 
-        //output for looking at microwave
-        else if (userInput == "open microwave" || userInput == "open up the microwave" || userInput == "open the microwave" || userInput == "open up microwave"
-            || userInput == "look microwave" || userInput == "look at microwave" || userInput == "microwave" || userInput == "take a look at microwave"
-            || userInput == "view microwave" || userInput == "inspect microwave" || userInput == "look at the microwave" || userInput == "take a look at the microwave")
+        //output for looking at cake
+        else if (userInput == "open cake" || userInput == "open up the cake" || userInput == "open the cake" || userInput == "open up cake"
+            || userInput == "look cake" || userInput == "look at cake" || userInput == "cake" || userInput == "take a look at cake"
+            || userInput == "view cake" || userInput == "inspect cake" || userInput == "look at the cake" || userInput == "take a look at the cake")
+        {
+            bool hasFork = false;
+            vector<string> items = backpack.getPockets();
+            for (size_t i = 0; i < items.size(); i++)
+            {
+                if (items[i] == "Fork")
+                {
+                    hasFork = true;
+                }
+            }
+            if (hasFork)
+            {
+                cout << "\nYou eat the cake.\nInside is the house key.\nYou grab the house key.\n";
+                backpack.addItem("House Key");
+                backpack.useItem("Fork"); // delete step ladder from inventory because it was used
+            }
+            else
+            {
+                cout << "\nThere's a cake with a cat frosted on top.\nAn animal I believe.\nIt looks very yummy, but you don't have anything to eat it with.\n";
+            }
+            
+        }
+
+        //output for looking at china cabinet
+        else if (userInput == "open china cabinet" || userInput == "open up the china cabinet" || userInput == "open the china cabinet" || userInput == "open up china cabinet"
+            || userInput == "look china cabinet" || userInput == "look at china cabinet" || userInput == "china cabinet" || userInput == "take a look at china cabinet"
+            || userInput == "view china cabinet" || userInput == "inspect china cabinet" || userInput == "look at the china cabinet" || userInput == "take a look at the china cabinet"
+            
+            || userInput == "open cabinet" || userInput == "open up the cabinet" || userInput == "open the cabinet" || userInput == "open up cabinet"
+            || userInput == "look cabinet" || userInput == "look at cabinet" || userInput == "cabinet" || userInput == "take a look at cabinet"
+            || userInput == "view cabinet" || userInput == "inspect cabinet" || userInput == "look at the cabinet" || userInput == "take a look at the cabinet")
         {
             bool hasStepLadder = false;
             vector<string> items = backpack.getPockets();
@@ -104,35 +131,16 @@ void Kitchen::onEnter()
             || userInput == "look oven" || userInput == "look at oven" || userInput == "oven" || userInput == "take a look at oven"
             || userInput == "view oven" || userInput == "inspect oven" || userInput == "look at the oven" || userInput == "take a look at the oven")
         {
-            bool hasOvenManual = false;
-            vector<string> items = backpack.getPockets();
-            for (size_t i = 0; i < items.size(); i++)
-            {
-                if (items[i] == "Oven Owner's Manual")
-                {
-                    hasOvenManual = true;
-                }
-            }
-            if (hasOvenManual)
-            {
-                cout << "\nYou use the oven owner's manual to turn off the oven.\nYou wait for the oven to cool down so you can grab the item.\n"
-                    << "\nThere's a chicken.\nA type of animal.\nHmmm..... animal....\nYou aren't hungry so you don't grab it.\n";
-                backpack.useItem("Oven Owner's Manual"); // delete step ladder from inventory because it was used
-            }
-            else
-            {
-                cout << "\nThere is something in the oven.\nThe oven is on and too hot to grab whatever is in there.\nIt is not your house so you don't know"
-                    << " how the oven is turned off.\n(even though you could probably figure it out yourself)\nMaybe there's an owner's manual somewhere.\n";
-            }
-            
+            cout << "\nThere is something in the oven.\nThe oven is on and too hot to grab whatever is in there.\nIt is not your house so you don't know"
+                << " how the oven is turned off.\n(even though you could probably figure it out yourself)\nMaybe there's an owner's manual somewhere.\n";
         }
-        
+
         //output for if the user wants to look at their inventory
         else if (userInput == "open inventory" || userInput == "open up the inventory" || userInput == "open the inventory" || userInput == "open up inventory"
             || userInput == "look inventory" || userInput == "look at inventory" || userInput == "inventory" || userInput == "take a look at inventory"
             || userInput == "view inventory" || userInput == "inspect inventory" || userInput == "look at the inventory" || userInput == "take a look at the inventory")
         {
-            
+
             item.outputItems();
         }
 

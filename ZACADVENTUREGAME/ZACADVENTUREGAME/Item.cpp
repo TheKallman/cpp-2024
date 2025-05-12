@@ -159,7 +159,7 @@ void Item::inspectSogComb()
 void Item::inspectMorseComb()
 {
     // gotten from under the bed in the master bedroom
-    // used for the...
+    // used for the used in study computer
     bool hasMorseComb = false;
     vector<string> items = backpack.getPockets();
     for (size_t i = 0; i < items.size(); i++)
