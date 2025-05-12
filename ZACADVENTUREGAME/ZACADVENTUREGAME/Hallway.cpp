@@ -1,6 +1,10 @@
-#include "Foyer.h"
 #include "Kitchen.h"
+#include "LaundryRoom.h"
+#include "Garage.h"
 #include "Backpack.h"
+#include "Bathroom.h"
+#include "SittingArea.h"
+#include "Hallway.h"
 #include "Item.h"
 #include <iostream>
 #include <string>
@@ -10,18 +14,23 @@
 #include <cmath>
 using namespace std;
 
-void Foyer::onEnter()
+void Hallway::onEnter()
 {
-    Item item;
-    Backpack backpack;
+    Hallway hallway;
+    LaundryRoom laundryRoom;
+    SittingArea sittingArea;
+    Bathroom bathroom;
+    Garage garage;
     Kitchen kitchen;
+    Item item;
+    Foyer foyer;
+    Backpack backpack;
     string userInput;
-    string drawerGuess;
 
-    cout << "\nYou are in the foyer.";
+    cout << "\nYou are in the hallway.";
     cout << "\nWhat do you want to do?\n>> ";
     getline(cin, userInput);
- 
+
     // Make input lowercase
     for (char& c : userInput) c = tolower(c);
     while (userInput != "quit")
@@ -29,93 +38,80 @@ void Foyer::onEnter()
         //outputs for if the user asks to go a certain direction
         if (userInput == "go east" || userInput == "east" || userInput == "walk east" || userInput == "move east")
         {
-            kitchen.onEnter();
+            cout << "\nDown the hall are three rooms.\nThe bathroom.\nThe closet.\nThe master bedroom.\nWhich would you like to go in?\n";
         }
         else if (userInput == "go north" || userInput == "north" || userInput == "walk north" || userInput == "move north")
         {
-            cout << "\nThere is a wall there.\n";
+            sittingArea.onEnter();
         }
         else if (userInput == "go south" || userInput == "south" || userInput == "walk south" || userInput == "move south")
         {
-            cout << "\nThere is a plant on a locked drawer that requires a four digit combination.\n";
+            cout << "\nYou can't tell what's there, but it seems like a wall.\n";
         }
         else if (userInput == "go west" || userInput == "west" || userInput == "walk west" || userInput == "move west")
         {
-            //find if user has house key and let them escape if they do
-            bool hasHouseKey = false;
-            vector<string> items = backpack.getPockets();
-            for (size_t i = 0; i < items.size(); i++)
-            {
-                if (items[i] == "House Key")
-                {
-                    hasHouseKey = true;
-                }
-            }
-            if (hasHouseKey)
-            {
-                cout << "\nYou unlock the front door with the house key and leave.\nCongratulations! You have escaped the house!\n";
-            }
-            else
-            {
-                cout << "\nThe door is locked. A house key is needed to unlock it.\n";
-            }
+            cout << "\nWalllll-Eeeeeeee\n";
         }
-        
+
         //outputs for if the user asks to look around hte room
         else if (userInput == "look" || userInput == "look around" || userInput == "take a look" || userInput == "take a gander"
             || userInput == "see" || userInput == "view" || userInput == "view room")
         {
-            cout << "\nThere is a locked door to the west. A way outside.\nTo the east is the kitchen."
-                << "\nThere is a plant on a locked drawer that requires a four digit combination to the south.\nThere is a wall to the north.\n";
+            cout << "\nTo the north is the sitting area.\nTo the east are multiple rooms down the hallway.\nTo the south is a wall.\nTo the west is a wall.\n";
+            cout << "The north side of the hallway has some paintings on it.\n";
+        }
+
+        //output for if the user wants to go in bathroom
+        else if (userInput == "bathroom" || userInput == "go in bathroom" || userInput == "go bathroom" || userInput == "puedo ir al bano"
+            || userInput == "walk bathroom" || userInput == "walk in bathroom" || userInput == "walk in the bathroom")
+        {
+            bathroom.onEnter();
         }
         
-        //output for if the user wants to look at the plant
-        else if (userInput == "look plant" || userInput == "look at plant" || userInput == "plant" || userInput == "take a look at plant"
-            || userInput == "view plant" || userInput == "inspect plant" || userInput == "look at the plant" || userInput == "take a look at the plant")
+        //output for if user wants to go to closet
+        else if (userInput == "closet" || userInput == "go in closet" || userInput == "go closet"
+            || userInput == "walk closet" || userInput == "walk in closet" || userInput == "walk in the closet" || userInput == "open closet"
+            || userInput == "open closet" || userInput == "open up the closet" || userInput == "open the closet" || userInput == "open up closet")
         {
-            cout << "\nThe plant seems leafy.\n";
-        }
-
-        //output for looking at drawer
-        else if (userInput == "look drawer" || userInput == "look at drawer" || userInput == "drawer"
-            || userInput == "take a look at drawer" || userInput == "view drawer" || userInput == "inspect drawer")
-        {
-            //KGPC refers to kitchen, garage, patio, closet. a hint to the code
-            cout << "\nIt's an old fashioned Victorian era wooden drawer. The letters KGPC are etched on it.\n";
-            cout << "Do you know the code?\n>> ";
-            cin >> drawerGuess;
-
-            //check if user knows the correct code
-            if (drawerGuess == drawerAnswer)
+            bool hasGKey = false;
+            vector<string> items = backpack.getPockets();
+            for (size_t i = 0; i < items.size(); i++)
             {
-                //if user has an item that is only gotten by getting the shape code then dont give the shape code again
-                //this is too much work i'm notdoing it for the others
-                bool hasOvenManual = false;
-                vector<string> items = backpack.getPockets();
-                for (size_t i = 0; i < items.size(); i++)
+                if (items[i] == "Green Key")
                 {
-                    if (items[i] == "Oven's Owner Manual")
-                    {
-                        hasOvenManual = true;
-                    }
+                    hasGKey = true;
                 }
-                if (hasOvenManual)
-                {
-                    cout << "\nYou've already unlocked this and grabbed the item.\n";
-                }
-                else
-                {
-                    cout << "\n*Click* The drawer opens.\nInside is a piece of paper with five numbers and shapes underneath each number.\nYou pick up the shape code.\n";
-                    backpack.addItem("Shape Code");
-                }
+            }
+            if (hasGKey)
+            {
+                cout << "\nYou unlock the closet with the green key.\n";
+                backpack.useItem("Green Key");
+                //closet.onEnter() when exists
             }
             else
             {
-                cout << "\nNothing happens. Wrong code.\n";
+                cout << "\nYou see the green doorknob and already know it's locked.\n";
             }
-
-            cin.ignore();
         }
+
+        //output for if user wants to go to the master bedroom
+        else if (userInput == "master bedroom" || userInput == "go in master bedroom" || userInput == "go master bedroom"
+            || userInput == "walk master bedroom" || userInput == "walk in master bedroom" || userInput == "walk in the master bedroom")
+        {
+            //masterBedroom.onEnter() when exists
+        }
+        //output for if the user wants to look at the paintings
+        else if (userInput == "look paintings" || userInput == "look at paintings" || userInput == "paintings" || userInput == "take a look at paintings"
+            || userInput == "view paintings" || userInput == "inspect paintings" || userInput == "look at the paintings" || userInput == "take a look at the paintings"
+            
+            || userInput == "look painting" || userInput == "look at painting" || userInput == "painting" || userInput == "take a look at painting"
+            || userInput == "view painting" || userInput == "inspect painting" || userInput == "look at the painting" || userInput == "take a look at the painting")
+        {
+            cout << "\nYou view each painting.\nOne of them is a large rendering of Salvador Dali's 'The Persistence of Memory'.\nYou find the melting clocks funny and laugh to yourself.\n"
+                << "Another painting looks homemade, showing a basic two-dimensional house with smoke from the chimney.\nIt's pretty mediocre and seems a child made it.\n"
+                << "The last painting at the end of the hallway is a massive one of a can of cream of mushroom soup.\n";
+        }
+
         //output for if the user wants to look at their inventory
         else if (userInput == "open inventory" || userInput == "open up the inventory" || userInput == "open the inventory" || userInput == "open up inventory"
             || userInput == "look inventory" || userInput == "look at inventory" || userInput == "inventory" || userInput == "take a look at inventory"
@@ -137,6 +133,7 @@ void Foyer::onEnter()
         {
             item.inspectGKey();
         }
+
         else if (userInput == "look shape code" || userInput == "look at shape code" || userInput == "shape code" || userInput == "take a look at shape code"
             || userInput == "take a look at the shape code" || userInput == "view shape code" || userInput == "inspect shape code")
         {
@@ -152,8 +149,8 @@ void Foyer::onEnter()
         {
             item.inspectYKey();
         }
-        else if (userInput == "look oven owner's manual" || userInput == "look at oven owner's manual" || userInput == "oven owner's manual" || userInput == "take a look at oven owner's manual"
-            || userInput == "take a look at the oven owner's manual" || userInput == "view oven owner's manual" || userInput == "inspect oven owner's manual")
+        else if (userInput == "look oven's owner manual" || userInput == "look at oven's owner manual" || userInput == "oven's owner manual" || userInput == "take a look at oven's owner manual"
+            || userInput == "take a look at the oven's owner manual" || userInput == "view oven's owner manual" || userInput == "inspect oven's owner manual")
         {
             item.inspectOvenManual();
         }
@@ -199,5 +196,5 @@ void Foyer::onEnter()
         cout << ">> ";
         getline(cin, userInput);
     }
-    
+
 }

@@ -1,14 +1,14 @@
 #pragma once
-#ifndef FOYER_H
-#define FOYER_H
+#ifndef GARAGE_H
+#define GARAGE_H
 
 #include <string>
 using namespace std;
 
-class Foyer
+class Garage
 {
 private:
-	string drawerAnswer = "6985";
+	string toolAnswer = "71258";
 public:
 	void onEnter();
 };
