@@ -33,10 +33,14 @@ public:
 	void inspectPKey();
 	void inspectBKey();
 	void inspectYKey();
+	void inspectRKey();
+
 	//combnation inspects
 	void inspectDrawerComb();
 	void inspectSogComb();
 	void inspectMorseComb();
+	void inspectAnimalComb();
+	void inspectPhoneComb();
 
 	//miscellaneous inspects
 	void inspectOvenManual();
@@ -44,5 +48,12 @@ public:
 	void inspectWashManual();
 	void inspectDumb();
 	void inspectRemote();
+	void inspectFork();
+	void inspectGloves();
+	void inspectStep();
+
+	//useless inspects
+	void inspectPennies();
+	void inspectDust();
 };
 #endif

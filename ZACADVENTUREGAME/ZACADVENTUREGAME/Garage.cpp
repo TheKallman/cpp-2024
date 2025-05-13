@@ -92,7 +92,6 @@ void Garage::onEnter()
                 cout << "\nYou also find a screwdriver.\nIt works on screws.\n";
                 backpack.addItem("Oven Owner's Manual");
                 backpack.addItem("Screwdriver");
-                backpack.useItem("Shape Code");
             }
             else
             {
@@ -177,6 +176,46 @@ void Garage::onEnter()
             || userInput == "take a look at the tv remote" || userInput == "view tv remote" || userInput == "inspect tv remote")
         {
             item.inspectRemote();
+        }
+        else if (userInput == "look animal code" || userInput == "look at animal code" || userInput == "animal code" || userInput == "take a look at animal code"
+            || userInput == "take a look at the animal code" || userInput == "view animal code" || userInput == "inspect animal code")
+        {
+            item.inspectAnimalComb();
+        }
+        else if (userInput == "look phone number" || userInput == "look at phone number" || userInput == "phone number" || userInput == "take a look at phone number"
+            || userInput == "take a look at the phone number" || userInput == "view phone number" || userInput == "inspect phone number")
+        {
+            item.inspectPhoneComb();
+        }
+        else if (userInput == "look two pennies" || userInput == "look at two pennies" || userInput == "two pennies" || userInput == "take a look at two pennies"
+            || userInput == "take a look at the two pennies" || userInput == "view two pennies" || userInput == "inspect two pennies")
+        {
+            item.inspectPennies();
+        }
+        else if (userInput == "look dust bunny" || userInput == "look at dust bunny" || userInput == "dust bunny" || userInput == "take a look at dust bunny"
+            || userInput == "take a look at the dust bunny" || userInput == "view dust bunny" || userInput == "inspect dust bunny")
+        {
+            item.inspectDust();
+        }
+        else if (userInput == "look fork" || userInput == "look at fork" || userInput == "fork" || userInput == "take a look at fork"
+            || userInput == "take a look at the fork" || userInput == "view fork" || userInput == "inspect fork")
+        {
+            item.inspectFork();
+        }
+        else if (userInput == "look gloves" || userInput == "look at gloves" || userInput == "gloves" || userInput == "take a look at gloves"
+            || userInput == "take a look at the gloves" || userInput == "view gloves" || userInput == "inspect gloves")
+        {
+            item.inspectGloves();
+        }
+        else if (userInput == "look red key" || userInput == "look at red key" || userInput == "red key" || userInput == "take a look at red key"
+            || userInput == "take a look at the red key" || userInput == "view red key" || userInput == "inspect red key")
+        {
+            item.inspectRKey();
+        }
+        else if (userInput == "look step ladder" || userInput == "look at step ladder" || userInput == "step ladder" || userInput == "take a look at step ladder"
+            || userInput == "take a look at the step ladder" || userInput == "view step ladder" || userInput == "inspect step ladder")
+        {
+            item.inspectStep();
         }
         else
         {

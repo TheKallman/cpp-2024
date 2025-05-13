@@ -1,12 +1,11 @@
 #include "Kitchen.h"
 #include "LaundryRoom.h"
-#include "Garage.h"
-#include "Backpack.h"
-#include "Bathroom.h"
 #include "SittingArea.h"
-#include "MasterBedroom.h"
-#include "Study.h"
-#include "Hallway.h"
+#include "LivingRoom.h"
+#include "Patio.h"
+#include "Foyer.h"
+#include "Backpack.h"
+#include "DiningRoom.h"
 #include "Item.h"
 #include <iostream>
 #include <string>
@@ -16,24 +15,21 @@
 #include <cmath>
 using namespace std;
 
-void Study::onEnter()
+    void Patio::onEnter()
 {
-    Hallway hallway;
-    Study study;
-    MasterBedroom masterBedroom;
-    Bathroom bathroom;
+    Patio patio;
+    LivingRoom livingRoom;
+    DiningRoom diningRoom;
     LaundryRoom laundryRoom;
     SittingArea sittingArea;
-    Garage garage;
     Kitchen kitchen;
     Item item;
     Foyer foyer;
     Backpack backpack;
     string userInput;
-    string computerGuess;
-    string safeGuess;
+    string phoneGuess;
 
-    cout << "\nYou are in the study.";
+    cout << "\nYou are on the patio.";
     cout << "\nWhat do you want to do?\n>> ";
     getline(cin, userInput);
 
@@ -44,79 +40,87 @@ void Study::onEnter()
         //outputs for if the user asks to go a certain direction
         if (userInput == "go east" || userInput == "east" || userInput == "walk east" || userInput == "move east")
         {
-            cout << "\nWhere's Wall-do?\n";
+            cout << "\nThere's a guardrail to keep you from falling.\nIt keeps you from falling.\n";
         }
         else if (userInput == "go north" || userInput == "north" || userInput == "walk north" || userInput == "move north")
         {
-            cout << "\nWall, by the way.\n";
+            cout << "\nThere's a guardrail there.\n";
         }
         else if (userInput == "go south" || userInput == "south" || userInput == "walk south" || userInput == "move south")
         {
-            cout << "\nDrat.\nA wall is there.\n";
+            cout << "\nThank goodness that guardrail is there.\nYou almost fell over.\n";
         }
         else if (userInput == "go west" || userInput == "west" || userInput == "walk west" || userInput == "move west")
         {
-            sittingArea.onEnter();
+            diningRoom.onEnter();
         }
 
         //outputs for if the user asks to look around hte room
         else if (userInput == "look" || userInput == "look around" || userInput == "take a look" || userInput == "take a gander"
             || userInput == "see" || userInput == "view" || userInput == "view room")
         {
-            cout << "\nThere is a desk in the middle of the room.\nA computer is sitting on top of the room.\nThere's a safe in the corner.\nGo west to leave.\n";
+            cout << "\nTo the north is a guardrail.\nTo the east is a guardrail.\nTo the south is a guardrail.\nTo the west is the dining room.\n"
+                << "There's an umbrella stuck through a table.\nIt provides shade for the whole table and it's not even opened.\nThere is a large scale out here for some reason.\n"
+                << "It could have been a science project.\n";
         }
 
-        //output for if the user wants to look at the desk
-        else if (userInput == "look desk" || userInput == "look at desk" || userInput == "desk" || userInput == "take a look at desk"
-            || userInput == "view desk" || userInput == "inspect desk" || userInput == "look at the desk" || userInput == "take a look at the desk")
+        //output for if the user wants to look at the umbrella
+        else if (userInput == "look umbrella" || userInput == "look at umbrella" || userInput == "umbrella" || userInput == "take a look at umbrella"
+            || userInput == "view umbrella" || userInput == "inspect umbrella" || userInput == "look at the umbrella" || userInput == "take a look at the umbrella")
         {
-            cout << "\nThere's a cold drink with no coaster on the desk.\nTHAT IS MAHOGANY!\nSorry, that's expensive wood and it makes me angry to see that.\nAnyways, there is a computer on the table.\n";
-            
+            cout << "\nYou take a wild look at the umbrella.\nIts size is menacing.\n*SHFWOOP*\nIf you couldn't tell by that onomatopoeia, you opened the umbrella.\n"
+                << "On the underside is a number eight.\nThat's probably useful.\n";
         }
 
-        //output for if user wants to go to computer
-        else if (userInput == "look computer" || userInput == "look at computer" || userInput == "computer" || userInput == "take a look at computer"
-            || userInput == "view computer" || userInput == "inspect computer" || userInput == "look at the computer" || userInput == "take a look at the computer")
+        //output for looking at table
+        else if (userInput == "look table" || userInput == "look at table" || userInput == "table" || userInput == "take a look at table"
+            || userInput == "view table" || userInput == "inspect table" || userInput == "look at the table" || userInput == "take a look at the table")
         {
-            //This is the morse code that needs to be translated
-            cout << "\nIt's a computer that asks for a password.\nThere are eight characters in it.\nIt's probably the owner's favorite song.\n";
-            cout << "Do you know the code?\n>> ";
-            cin >> computerGuess;
+            cout << "\nIt's a big, splintery wooden table.\nYou run your hand across it and miracuously don't get any splinters.\nInstead, the table gets a skin splinter from your hand.\nEw...\n"
+                << "There's also a huge umbrella in the middle.\n";
+        }
 
-            //check if user knows the correct code
-            if (computerGuess == computerAnswer)
+        //output for looking at scale
+        else if (userInput == "look scale" || userInput == "look at scale" || userInput == "scale" || userInput == "take a look at scale"
+            || userInput == "view scale" || userInput == "inspect scale" || userInput == "look at the scale" || userInput == "take a look at the scale")
+        {
+            bool hasDumb = false;
+            vector<string> items = backpack.getPockets();
+            for (size_t i = 0; i < items.size(); i++)
             {
-                cout << "\n*Bleep Bloop*\n*Wrrrrrrr*\nYou're in.\nThe background is an pride of four lions.\nWhy would that be helpful?\n";
+                if (items[i] == "Ten Pound Dumbbell")
+                {
+                    hasDumb = true;
+                }
+            }
+            if (hasDumb)
+            {
+                cout << "\nYou use your ten pound dumbbell to train and get strong enough to easily lift off the fifty pound dumbbell weighing down the object on the other platform.\n"
+                    << "\nIt's a rotary telephone.\nThis is one weird science project.\nIs there someone you can call?\n";
+                cout << ">> ";
+                cin >> phoneGuess;
+
+                //check if user knows the correct code
+                if (phoneGuess == phoneAns)
+                {
+                    cout << "\n*BRRRRING BRRRRING*\nThe guy from the Snap Chop TM infomercial picks up.\n"
+                        << "You order a Snap Chop TM.\nYou wait a few days and it is droned in above you.\nYou are so excited to use your new Snap Chop TM.\n"
+                        << "You rip open the box and see you did not get a Snap Chop TM.\nYou start crying because all you got was a fork.\n";
+                    backpack.addItem("Fork");
+                }
+                else
+                {
+                    cout << "\n*BRRRRING BRRRRING*\nNobody picks up.\n";
+                }
+
+                cin.ignore();
+                
             }
             else
             {
-                cout << "\nNothing happens. Wrong password.\n";
+                cout << "\nThe scale is weighed down on one end with a fifty pound dumbbell.\nIt's too heavy for you to lift.\nIf you trained and were stronger, you could definitely pick it up.\n"
+                    << "There might be something on the opposite platform.\n";
             }
-
-            cin.ignore();
-        }
-
-        //output for if user wants to go to the safe
-        else if (userInput == "look safe" || userInput == "look at safe" || userInput == "safe" || userInput == "take a look at safe"
-            || userInput == "view safe" || userInput == "inspect safe" || userInput == "look at the safe" || userInput == "take a look at the safe")
-        {
-            //This is the soggy code from bathroom
-            cout << "\nIt's a big black safe with a combination lock like from your locker at school.\nYou need three numbers (put spaces in between the numbers).\nOhhhh boy! I hope something valuable is in there.\n";
-            cout << "Do you know the code?\n>> ";
-            getline(cin, safeGuess);
-
-            //check if user knows the correct code
-            if (safeGuess == safeAnswer)
-            {
-                cout << "\n*CACHUNK*\nThe safe made a loud noise.\nYou open the safe and grab a...\nTV remote??\n";
-                backpack.addItem("TV Remote");
-            }
-            else
-            {
-                cout << "\nNothing happens. Wrong code.\n";
-            }
-
-            cin.ignore();
         }
 
         //output for if the user wants to look at their inventory
@@ -124,6 +128,7 @@ void Study::onEnter()
             || userInput == "look inventory" || userInput == "look at inventory" || userInput == "inventory" || userInput == "take a look at inventory"
             || userInput == "view inventory" || userInput == "inspect inventory" || userInput == "look at the inventory" || userInput == "take a look at the inventory")
         {
+
             item.outputItems();
         }
 

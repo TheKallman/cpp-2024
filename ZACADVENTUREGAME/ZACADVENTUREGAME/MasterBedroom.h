@@ -1,6 +1,6 @@
 #pragma once
-#ifndef CLOSET_H
-#define CLOSET_H
+#ifndef MASTERBEDROOM_H
+#define MASTERBEDROOM_H
 
 using namespace std;
 

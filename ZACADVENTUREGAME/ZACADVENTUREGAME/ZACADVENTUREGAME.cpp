@@ -14,14 +14,14 @@ void play();
 
 int main()
 {
-    char uselessQuestion; //real
+    string uselessQuestion; //real
 
     cout << "Welcome to Zac's Escape House!\n";
     cout << "Start? (y/n)\n";
     cout << ">> ";
     cin >> uselessQuestion;
 
-    if (tolower(uselessQuestion) == 'y')
+    if (uselessQuestion == "y" || uselessQuestion == "Y")
     {
         play();
     }

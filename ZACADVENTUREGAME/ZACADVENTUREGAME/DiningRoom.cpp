@@ -4,6 +4,8 @@
 #include "Foyer.h"
 #include "Backpack.h"
 #include "DiningRoom.h"
+#include "Patio.h"
+#include "LivingRoom.h"
 #include "Item.h"
 #include <iostream>
 #include <string>
@@ -15,6 +17,8 @@ using namespace std;
 
 void DiningRoom::onEnter()
 {
+    Patio patio;
+    LivingRoom livingRoom;
     DiningRoom diningRoom;
     LaundryRoom laundryRoom;
     SittingArea sittingArea;
@@ -24,7 +28,7 @@ void DiningRoom::onEnter()
     Backpack backpack;
     string userInput;
 
-    cout << "\nYou are in the kitchen.";
+    cout << "\nYou are in the dining room.";
     cout << "\nWhat do you want to do?\n>> ";
     getline(cin, userInput);
 
@@ -35,11 +39,11 @@ void DiningRoom::onEnter()
         //outputs for if the user asks to go a certain direction
         if (userInput == "go east" || userInput == "east" || userInput == "walk east" || userInput == "move east")
         {
-            //patio.onEnter(); when exists
+            patio.onEnter();
         }
         else if (userInput == "go north" || userInput == "north" || userInput == "walk north" || userInput == "move north")
         {
-            //livingRoom.onEnter(); when exists
+            livingRoom.onEnter();
         }
         else if (userInput == "go south" || userInput == "south" || userInput == "walk south" || userInput == "move south")
         {
@@ -69,9 +73,9 @@ void DiningRoom::onEnter()
         }
 
         //output for looking at cake
-        else if (userInput == "open cake" || userInput == "open up the cake" || userInput == "open the cake" || userInput == "open up cake"
-            || userInput == "look cake" || userInput == "look at cake" || userInput == "cake" || userInput == "take a look at cake"
-            || userInput == "view cake" || userInput == "inspect cake" || userInput == "look at the cake" || userInput == "take a look at the cake")
+        else if (userInput == "look cake" || userInput == "look at cake" || userInput == "cake" || userInput == "take a look at cake"
+            || userInput == "view cake" || userInput == "inspect cake" || userInput == "look at the cake" || userInput == "take a look at the cake"
+            || userInput == "eat cake" || userInput == "eat the cake" || userInput == "gobble cake" || userInput == "gobble up the cake")
         {
             bool hasFork = false;
             vector<string> items = backpack.getPockets();
@@ -86,11 +90,11 @@ void DiningRoom::onEnter()
             {
                 cout << "\nYou eat the cake.\nInside is the house key.\nYou grab the house key.\n";
                 backpack.addItem("House Key");
-                backpack.useItem("Fork"); // delete step ladder from inventory because it was used
+
             }
             else
             {
-                cout << "\nThere's a cake with a cat frosted on top.\nAn animal I believe.\nIt looks very yummy, but you don't have anything to eat it with.\n";
+                cout << "\nThere's a cake with a seven legged cat frosted on top.\nIt was hard for you to tell if it was an animal because the froster sucks.\nIt looks very yummy, but you don't have anything to eat it with.\n";
             }
             
         }
@@ -104,35 +108,38 @@ void DiningRoom::onEnter()
             || userInput == "look cabinet" || userInput == "look at cabinet" || userInput == "cabinet" || userInput == "take a look at cabinet"
             || userInput == "view cabinet" || userInput == "inspect cabinet" || userInput == "look at the cabinet" || userInput == "take a look at the cabinet")
         {
-            bool hasStepLadder = false;
+            bool hasYKey = false;
             vector<string> items = backpack.getPockets();
             for (size_t i = 0; i < items.size(); i++)
             {
-                if (items[i] == "Step Ladder")
+                if (items[i] == "Yellow Key")
                 {
-                    hasStepLadder = true;
+                    hasYKey = true;
                 }
             }
-            if (hasStepLadder)
+            if (hasYKey)
             {
-                cout << "\nYou use the step ladder to gain enough height to be able to open the micowave.\nThere is a cold breakfast burrito.\n"
-                    << "You eat it and find a purple key.\n";
-                backpack.addItem("Purple Key"); // add purple key to inventory
-                backpack.useItem("Step Ladder"); // delete step ladder from inventory because it was used
+                cout << "\nYou unlock the china cabinet with the yellow key.\nInside is a piece of paper with animals on it.\nThey are drawn sloppily and are not colored inside the lines.\n"
+                    << "You grab the animal code.\nYou also get a red key.\n";
+                backpack.addItem("Red Key");
+                backpack.addItem("Animal Code");
             }
             else
             {
-                cout << "\nYou are not tall enough to open it. Maybe if you had something to stand on.\nYou go on your tippy toes and can make something out in there.\n";
+                cout << "\nIt's a tall cabinet with glass doors with a yellow key hole.\nBehind the doors are shelves of fine china.\nThere's also a piece of paper and a key back there.\nHow intriguing.\n";
             }
         }
 
-        //output for if the user wants to look at the oven
-        else if (userInput == "open oven" || userInput == "open up the oven" || userInput == "open the oven" || userInput == "open up oven"
-            || userInput == "look oven" || userInput == "look at oven" || userInput == "oven" || userInput == "take a look at oven"
-            || userInput == "view oven" || userInput == "inspect oven" || userInput == "look at the oven" || userInput == "take a look at the oven")
+        //output for if the user wants to look at the chair
+        else if (userInput == "look chairs" || userInput == "look at chairs" || userInput == "chairs" || userInput == "take a look at chairs"
+            || userInput == "view chairs" || userInput == "inspect chairs" || userInput == "look at the chairs" || userInput == "take a look at the chairs"
+            || userInput == "look chair" || userInput == "look at chair" || userInput == "chair" || userInput == "take a look at chair"
+            || userInput == "view chair" || userInput == "inspect chair" || userInput == "look at the chair" || userInput == "take a look at the chair"
+            || userInput == "sit chair" || userInput == "sit on chair" || userInput == "sit on the chair" || userInput == "sit on top of the chair"
+            || userInput == "sit" || userInput == "sit down" || userInput == "sit down on chair" || userInput == "sit on chair"
+            || userInput == "have a seat" || userInput == "take a seat" || userInput == "go take a seat" || userInput == "go have a seat")
         {
-            cout << "\nThere is something in the oven.\nThe oven is on and too hot to grab whatever is in there.\nIt is not your house so you don't know"
-                << " how the oven is turned off.\n(even though you could probably figure it out yourself)\nMaybe there's an owner's manual somewhere.\n";
+            cout << "\nYour butt hurts.\nProbably from all this walking around you've been doing.\nYou are too sore to sit.\n";
         }
 
         //output for if the user wants to look at their inventory
@@ -210,6 +217,46 @@ void DiningRoom::onEnter()
             || userInput == "take a look at the tv remote" || userInput == "view tv remote" || userInput == "inspect tv remote")
         {
             item.inspectRemote();
+        }
+        else if (userInput == "look animal code" || userInput == "look at animal code" || userInput == "animal code" || userInput == "take a look at animal code"
+            || userInput == "take a look at the animal code" || userInput == "view animal code" || userInput == "inspect animal code")
+        {
+            item.inspectAnimalComb();
+        }
+        else if (userInput == "look phone number" || userInput == "look at phone number" || userInput == "phone number" || userInput == "take a look at phone number"
+            || userInput == "take a look at the phone number" || userInput == "view phone number" || userInput == "inspect phone number")
+        {
+            item.inspectPhoneComb();
+        }
+        else if (userInput == "look two pennies" || userInput == "look at two pennies" || userInput == "two pennies" || userInput == "take a look at two pennies"
+            || userInput == "take a look at the two pennies" || userInput == "view two pennies" || userInput == "inspect two pennies")
+        {
+            item.inspectPennies();
+        }
+        else if (userInput == "look dust bunny" || userInput == "look at dust bunny" || userInput == "dust bunny" || userInput == "take a look at dust bunny"
+            || userInput == "take a look at the dust bunny" || userInput == "view dust bunny" || userInput == "inspect dust bunny")
+        {
+            item.inspectDust();
+        }
+        else if (userInput == "look fork" || userInput == "look at fork" || userInput == "fork" || userInput == "take a look at fork"
+            || userInput == "take a look at the fork" || userInput == "view fork" || userInput == "inspect fork")
+        {
+            item.inspectFork();
+        }
+        else if (userInput == "look gloves" || userInput == "look at gloves" || userInput == "gloves" || userInput == "take a look at gloves"
+            || userInput == "take a look at the gloves" || userInput == "view gloves" || userInput == "inspect gloves")
+        {
+            item.inspectGloves();
+        }
+        else if (userInput == "look red key" || userInput == "look at red key" || userInput == "red key" || userInput == "take a look at red key"
+            || userInput == "take a look at the red key" || userInput == "view red key" || userInput == "inspect red key")
+        {
+            item.inspectRKey();
+        }
+        else if (userInput == "look step ladder" || userInput == "look at step ladder" || userInput == "step ladder" || userInput == "take a look at step ladder"
+            || userInput == "take a look at the step ladder" || userInput == "view step ladder" || userInput == "inspect step ladder")
+        {
+            item.inspectStep();
         }
         else
         {

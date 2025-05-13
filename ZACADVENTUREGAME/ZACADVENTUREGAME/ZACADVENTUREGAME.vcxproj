@@ -140,6 +140,8 @@
     <ClCompile Include="Bathroom.cpp" />
     <ClCompile Include="MasterBedroom.cpp" />
     <ClCompile Include="Study.cpp" />
+	<ClCompile Include="LivingRoom.cpp" />
+	<ClCompile Include="Patio.cpp" />
     <ClCompile Include="ZACADVENTUREGAME.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -155,7 +157,9 @@
     <ClInclude Include="Hallway.h" />
     <ClInclude Include="Bathroom.h" />
     <ClInclude Include="Study.h" />
+	<ClInclude Include="Patio.h" />
     <ClInclude Include="MasterBedroom.h" />
+	<ClInclude Include="LivingRoom.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

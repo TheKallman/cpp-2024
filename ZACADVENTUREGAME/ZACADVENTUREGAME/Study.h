@@ -1,4 +1,4 @@
-#pragma once
+ #pragma once
 #ifndef STUDY_H
 #define STUDY_H
 #include <string>
